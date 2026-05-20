@@ -21,12 +21,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ error: '필수 파라미터 누락 (exam_id, exam_name, stage_name, queries)' });
   }
 
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
+
+  const send = (data: object) => {
+    res.write(`data: ${JSON.stringify(data)}\n\n`);
+    if (typeof (res as unknown as { flush?: () => void }).flush === 'function') {
+      (res as unknown as { flush: () => void }).flush();
+    }
+  };
+
   try {
     const { results, logs } = await runSearch({
       exam_id,
       exam_name,
       stage_name,
       queries,
+      onProgress: (current, total, query_text) => {
+        send({ type: 'progress', current, total, query_text });
+      },
     });
 
     const existingResults = loadResults();
@@ -35,9 +50,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const existingLogs = loadLogs();
     saveLogs([...existingLogs, ...logs]);
 
-    return res.status(200).json({ success: true, results, logs });
+    send({ type: 'complete', results, logs });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    return res.status(500).json({ error: message });
+    send({ type: 'error', error: message });
+  } finally {
+    res.end();
   }
 }

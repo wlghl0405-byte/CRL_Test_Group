@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { TestQuery, QueryCategory, Exam } from '../lib/types';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -40,7 +40,11 @@ export default function QuerySetManager({
   const [form, setForm] = useState<TestQuery>(EMPTY_QUERY(examId));
   const [uploadErrors, setUploadErrors] = useState<string[]>([]);
   const [previewQueries, setPreviewQueries] = useState<TestQuery[] | null>(null);
+  const [showGSheetInput, setShowGSheetInput] = useState(false);
+  const [gsheetUrl, setGsheetUrl] = useState('');
+  const [gsheetLoading, setGsheetLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const masterCheckRef = useRef<HTMLInputElement>(null);
 
   const apiPost = async (body: Record<string, unknown>) => {
     const res = await fetch('/api/save-queries', {
@@ -100,6 +104,12 @@ export default function QuerySetManager({
     onQueriesChange(data.queries);
   };
 
+  const normalizeExamIds = (parsedQueries: TestQuery[]) =>
+    parsedQueries.map((q) => {
+      const matched = exams.find((ex) => ex.exam_name === q.exam_id || ex.exam_id === q.exam_id);
+      return matched ? { ...q, exam_id: matched.exam_id } : q;
+    });
+
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -113,9 +123,26 @@ export default function QuerySetManager({
       setUploadErrors(data.errors);
       return;
     }
-    setPreviewQueries(data.queries || []);
+    setPreviewQueries(normalizeExamIds(data.queries || []));
     setUploadErrors(data.errors || []);
     if (fileRef.current) fileRef.current.value = '';
+  };
+
+  const handleGSheetImport = async () => {
+    if (!gsheetUrl.trim()) return alert('구글 시트 URL을 입력하세요.');
+    setGsheetLoading(true);
+    setUploadErrors([]);
+    setPreviewQueries(null);
+    const data = await apiPost({ action: 'import_gsheet', url: gsheetUrl.trim(), exam_id: examId });
+    setGsheetLoading(false);
+    if (data.errors?.length > 0 && !data.queries?.length) {
+      setUploadErrors(data.errors);
+      return;
+    }
+    setPreviewQueries(normalizeExamIds(data.queries || []));
+    setUploadErrors(data.errors || []);
+    setShowGSheetInput(false);
+    setGsheetUrl('');
   };
 
   const handleSavePreview = async () => {
@@ -124,6 +151,15 @@ export default function QuerySetManager({
     onQueriesChange(data.queries);
     setPreviewQueries(null);
   };
+
+  const allFilteredSelected = filtered.length > 0 && filtered.every((q) => selectedQueryIds.has(q.query_id));
+  const someFilteredSelected = filtered.some((q) => selectedQueryIds.has(q.query_id));
+
+  useEffect(() => {
+    if (masterCheckRef.current) {
+      masterCheckRef.current.indeterminate = someFilteredSelected && !allFilteredSelected;
+    }
+  }, [someFilteredSelected, allFilteredSelected]);
 
   const toggleSelect = (id: string) => {
     const next = new Set(selectedQueryIds);
@@ -139,6 +175,25 @@ export default function QuerySetManager({
 
   const clearAll = () => onSelectionChange(new Set());
 
+  const handleDeleteSelected = async () => {
+    const targets = filtered.filter((q) => selectedQueryIds.has(q.query_id));
+    if (targets.length === 0) return;
+    if (!confirm(`선택한 ${targets.length}건의 질의를 삭제하시겠습니까?`)) return;
+    const data = await apiPost({
+      action: 'delete_selected',
+      query_ids: targets.map((q) => q.query_id),
+    });
+    onQueriesChange(data.queries);
+    onSelectionChange(new Set());
+  };
+
+  const handleDeleteAll = async () => {
+    if (!confirm(`질의 전체 ${queries.length}건을 모두 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)) return;
+    const data = await apiPost({ action: 'delete_all' });
+    onQueriesChange(data.queries);
+    onSelectionChange(new Set());
+  };
+
   return (
     <section className="section">
       <div className="section-header">
@@ -146,9 +201,32 @@ export default function QuerySetManager({
         <div className="btn-group">
           <button className="btn" onClick={() => fileRef.current?.click()}>엑셀/CSV 업로드</button>
           <input ref={fileRef} type="file" accept=".xlsx,.csv" style={{ display: 'none' }} onChange={handleFileUpload} />
+          <button
+            className={`btn${showGSheetInput ? ' btn-primary' : ''}`}
+            onClick={() => { setShowGSheetInput((v) => !v); setUploadErrors([]); }}
+          >
+            구글 시트
+          </button>
           <button className="btn btn-primary" onClick={openAdd}>+ 직접 추가</button>
         </div>
       </div>
+
+      {showGSheetInput && (
+        <div className="gsheet-input-bar">
+          <input
+            type="text"
+            className="gsheet-url-input"
+            placeholder="구글 시트 URL을 붙여넣으세요 (공개 공유 상태여야 합니다)"
+            value={gsheetUrl}
+            onChange={(e) => setGsheetUrl(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleGSheetImport()}
+          />
+          <button className="btn btn-primary btn-sm" onClick={handleGSheetImport} disabled={gsheetLoading}>
+            {gsheetLoading ? '가져오는 중...' : '가져오기'}
+          </button>
+          <button className="btn btn-sm" onClick={() => { setShowGSheetInput(false); setGsheetUrl(''); }}>취소</button>
+        </div>
+      )}
 
       {uploadErrors.length > 0 && (
         <div className="alert alert-error">
@@ -217,14 +295,38 @@ export default function QuerySetManager({
         <button className="btn btn-sm" onClick={selectAll}>전체 선택</button>
         <button className="btn btn-sm" onClick={clearAll}>선택 해제</button>
         <span className="count-badge">{selectedQueryIds.size}건 선택 / {filtered.length}건 표시</span>
+        <div className="filter-bar-actions">
+          <button
+            className="btn btn-sm btn-danger"
+            onClick={handleDeleteSelected}
+            disabled={filtered.filter((q) => selectedQueryIds.has(q.query_id)).length === 0}
+          >
+            선택 삭제{filtered.filter((q) => selectedQueryIds.has(q.query_id)).length > 0 && ` (${filtered.filter((q) => selectedQueryIds.has(q.query_id)).length}건)`}
+          </button>
+          <button
+            className="btn btn-sm btn-danger-outline"
+            onClick={handleDeleteAll}
+            disabled={queries.length === 0}
+          >
+            전체 삭제
+          </button>
+        </div>
       </div>
 
       <div className="table-scroll">
         <table className="table">
           <thead>
             <tr>
-              <th>선택</th>
-              <th>exam_id</th>
+              <th>
+                <input
+                  type="checkbox"
+                  ref={masterCheckRef}
+                  checked={allFilteredSelected}
+                  onChange={() => allFilteredSelected ? clearAll() : selectAll()}
+                  title={allFilteredSelected ? '전체 해제' : '전체 선택'}
+                />
+              </th>
+              <th>시험 회차</th>
               <th>유형</th>
               <th>세부유형</th>
               <th>질의</th>
@@ -244,7 +346,7 @@ export default function QuerySetManager({
                     onChange={() => toggleSelect(q.query_id)}
                   />
                 </td>
-                <td>{q.exam_id}</td>
+                <td>{exams.find((ex) => ex.exam_id === q.exam_id)?.exam_name ?? q.exam_id}</td>
                 <td>{q.category}</td>
                 <td>{q.sub_category}</td>
                 <td className="cell-query">{q.query_text}</td>

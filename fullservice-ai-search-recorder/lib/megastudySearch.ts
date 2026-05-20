@@ -98,6 +98,19 @@ async function searchOneQuery(
       throw new Error('AI모드 답변 영역 미노출 또는 로딩 시간 초과');
     }
 
+    // 컨테이너가 보인 후에도 텍스트는 스트리밍으로 채워지므로 실제 내용 대기
+    await page.waitForFunction(
+      () => {
+        const el = document.querySelector(
+          '#ai-summary-container .unified-ai-talk__depth-text, .unified-ai-talk__depth-text',
+        );
+        return el && (el.textContent?.trim().length ?? 0) > 5;
+      },
+      { timeout: AI_ANSWER_TIMEOUT_MS },
+    ).catch(() => {
+      // 대기 실패 시 수집 시도는 계속하되 이후 빈 텍스트 체크에서 실패 처리됨
+    });
+
     // 답변 수집
     const titleEl = page.locator('#ai-summary-container .unified-ai-talk__result-title').first();
     const bodyEl = page.locator('#ai-summary-container .unified-ai-talk__depth-text').first();
@@ -116,6 +129,12 @@ async function searchOneQuery(
 
     answer_title = answer_title.trim();
     answer_text = answer_text.trim();
+
+    // 텍스트가 비어있으면 컨테이너만 렌더됐고 내용이 미로딩된 것 → 실패 처리하여 재시도 유도
+    if (!answer_text) {
+      throw new Error('AI 답변 텍스트 미수집: 컨테이너는 발견됐으나 텍스트 없음 (로딩 지연)');
+    }
+
     collection_status = '수집 성공';
   } catch (err) {
     error_message = err instanceof Error ? err.message : String(err);

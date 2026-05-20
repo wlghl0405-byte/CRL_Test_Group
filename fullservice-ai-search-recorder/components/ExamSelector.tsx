@@ -75,8 +75,8 @@ export default function ExamSelector({ exams, selectedExamId, onSelect, onExamsC
             <th>선택</th>
             <th>시험명</th>
             <th>유형</th>
-            <th>월</th>
             <th>연도</th>
+            <th>월</th>
             <th>활성</th>
             <th>수정</th>
             <th>삭제</th>
@@ -98,8 +98,8 @@ export default function ExamSelector({ exams, selectedExamId, onSelect, onExamsC
               </td>
               <td><strong>{exam.exam_name}</strong></td>
               <td>{exam.exam_type}</td>
-              <td>{exam.exam_month}월</td>
               <td>{exam.year}</td>
+              <td>{exam.exam_month}월</td>
               <td>{exam.active_yn ? 'Y' : 'N'}</td>
               <td>
                 <button className="btn btn-sm" onClick={() => openEdit(exam)}>수정</button>

@@ -40,7 +40,6 @@ export default function Home() {
       <div className="app">
         <header className="app-header">
           <h1>풀서비스 출시 검수 자동화 도구</h1>
-          <p className="header-sub">메가스터디 AI검색 답변 자동 수집 시스템 — 1차 구현</p>
         </header>
 
         <main className="app-main">

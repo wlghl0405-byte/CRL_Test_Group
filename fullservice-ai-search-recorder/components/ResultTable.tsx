@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SearchResult } from '../lib/types';
 
 interface Props {
   newResults: SearchResult[];
 }
+
+const rowKey = (r: SearchResult) => `${r.run_id}|${r.query_id}`;
 
 export default function ResultTable({ newResults }: Props) {
   const [allResults, setAllResults] = useState<SearchResult[]>([]);
@@ -13,6 +15,8 @@ export default function ResultTable({ newResults }: Props) {
   const [filterStatus, setFilterStatus] = useState('');
   const [failOnly, setFailOnly] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
+  const masterCheckRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch('/api/results')
@@ -23,9 +27,9 @@ export default function ResultTable({ newResults }: Props) {
   useEffect(() => {
     if (newResults.length > 0) {
       setAllResults((prev) => {
-        const ids = new Set(newResults.map((r) => r.run_id + r.query_id));
-        const filtered = prev.filter((r) => !ids.has(r.run_id + r.query_id));
-        return [...newResults, ...filtered];
+        const ids = new Set(newResults.map(rowKey));
+        const deduped = prev.filter((r) => !ids.has(rowKey(r)));
+        return [...newResults, ...deduped];
       });
     }
   }, [newResults]);
@@ -43,6 +47,73 @@ export default function ResultTable({ newResults }: Props) {
     return true;
   });
 
+  // 마스터 체크박스 indeterminate 처리
+  const allFilteredSelected = filtered.length > 0 && filtered.every((r) => selectedKeys.has(rowKey(r)));
+  const someFilteredSelected = filtered.some((r) => selectedKeys.has(rowKey(r)));
+  useEffect(() => {
+    if (masterCheckRef.current) {
+      masterCheckRef.current.indeterminate = someFilteredSelected && !allFilteredSelected;
+    }
+  }, [someFilteredSelected, allFilteredSelected]);
+
+  const toggleRow = (key: string) => {
+    setSelectedKeys((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
+  };
+
+  const toggleAll = () => {
+    if (allFilteredSelected) {
+      setSelectedKeys((prev) => {
+        const next = new Set(prev);
+        filtered.forEach((r) => next.delete(rowKey(r)));
+        return next;
+      });
+    } else {
+      setSelectedKeys((prev) => {
+        const next = new Set(prev);
+        filtered.forEach((r) => next.add(rowKey(r)));
+        return next;
+      });
+    }
+  };
+
+  const apiDelete = async (body: object) => {
+    const res = await fetch('/api/results', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    setAllResults(data.results || []);
+    setSelectedKeys(new Set());
+  };
+
+  const handleDeleteSelected = async () => {
+    const targets = filtered.filter((r) => selectedKeys.has(rowKey(r)));
+    if (targets.length === 0) return;
+    if (!confirm(`선택한 ${targets.length}건을 삭제하시겠습니까?`)) return;
+    await apiDelete({
+      action: 'delete_selected',
+      ids: targets.map((r) => ({ run_id: r.run_id, query_id: r.query_id })),
+    });
+  };
+
+  const handleDeleteOne = async (r: SearchResult) => {
+    if (!confirm(`해당 수집 결과를 삭제하시겠습니까?\n"${r.query_text}"`)) return;
+    await apiDelete({
+      action: 'delete_selected',
+      ids: [{ run_id: r.run_id, query_id: r.query_id }],
+    });
+  };
+
+  const handleDeleteAll = async () => {
+    if (!confirm(`전체 수집 결과 ${allResults.length}건을 모두 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.`)) return;
+    await apiDelete({ action: 'delete_all' });
+  };
+
   const handleDownload = () => {
     window.open('/api/export-results', '_blank');
   };
@@ -54,6 +125,13 @@ export default function ResultTable({ newResults }: Props) {
       return [];
     }
   };
+
+  const formatDatetime = (val: string) => {
+    const [date, time] = val.split('T');
+    return { date: date ?? val, time: time ?? '' };
+  };
+
+  const selectedCount = filtered.filter((r) => selectedKeys.has(rowKey(r))).length;
 
   return (
     <section className="section">
@@ -87,55 +165,86 @@ export default function ResultTable({ newResults }: Props) {
           <input type="checkbox" checked={failOnly} onChange={(e) => setFailOnly(e.target.checked)} />
           &nbsp;실패 건만 보기
         </label>
+        <div className="filter-bar-actions">
+          <button
+            className="btn btn-sm btn-danger"
+            onClick={handleDeleteSelected}
+            disabled={selectedCount === 0}
+          >
+            선택 삭제 {selectedCount > 0 && `(${selectedCount}건)`}
+          </button>
+          <button
+            className="btn btn-sm btn-danger-outline"
+            onClick={handleDeleteAll}
+            disabled={allResults.length === 0}
+          >
+            전체 삭제
+          </button>
+        </div>
       </div>
 
       <div className="table-scroll">
         <table className="table">
           <thead>
             <tr>
+              <th>
+                <input
+                  type="checkbox"
+                  ref={masterCheckRef}
+                  checked={allFilteredSelected}
+                  onChange={toggleAll}
+                  title={allFilteredSelected ? '전체 해제' : '전체 선택'}
+                />
+              </th>
               <th>실행 시각</th>
               <th>시험 회차</th>
               <th>공개 단계</th>
               <th>질의 유형</th>
               <th>질의</th>
-              <th>답변 제목</th>
               <th>답변 본문</th>
               <th>링크</th>
               <th>수집 상태</th>
               <th>실패 사유</th>
               <th>소요(초)</th>
+              <th>삭제</th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((r, i) => {
-              const key = r.run_id + r.query_id + i;
+              const key = rowKey(r);
+              const expandKey = key + i;
               const links = parseLinks(r.source_links);
-              const isExpanded = expandedId === key;
+              const isExpanded = expandedId === expandKey;
+              const isSelected = selectedKeys.has(key);
               return (
-                <tr key={key} className={r.collection_status === '수집 실패' ? 'row-fail' : ''}>
-                  <td className="cell-sm">{r.executed_at}</td>
-                  <td className="cell-sm">{r.exam_name}</td>
-                  <td className="cell-sm">{r.stage_name}</td>
-                  <td className="cell-sm">{r.category}</td>
+                <tr key={expandKey} className={`${r.collection_status === '수집 실패' ? 'row-fail' : ''} ${isSelected ? 'row-selected' : ''}`}>
+                  <td>
+                    <input type="checkbox" checked={isSelected} onChange={() => toggleRow(key)} />
+                  </td>
+                  <td className="cell-datetime">
+                    {(() => { const { date, time } = formatDatetime(r.executed_at); return <><span className="datetime-date">{date}</span><span className="datetime-time">{time}</span></>; })()}
+                  </td>
+                  <td className="cell-exam">{r.exam_name}</td>
+                  <td className="cell-stage">{r.stage_name}</td>
+                  <td className="cell-type">{r.category}</td>
                   <td className="cell-query">{r.query_text}</td>
-                  <td className="cell-md">{r.answer_title}</td>
-                  <td className="cell-body">
+                  <td className="cell-body-wide">
                     <div
                       className={isExpanded ? 'text-expanded' : 'text-collapsed'}
-                      onClick={() => setExpandedId(isExpanded ? null : key)}
+                      onClick={() => setExpandedId(isExpanded ? null : expandKey)}
                     >
                       {r.answer_text || '—'}
                     </div>
                     {r.answer_text && (
-                      <button className="btn btn-xs" onClick={() => setExpandedId(isExpanded ? null : key)}>
+                      <button className="btn btn-xs" onClick={() => setExpandedId(isExpanded ? null : expandKey)}>
                         {isExpanded ? '접기' : '펼치기'}
                       </button>
                     )}
                   </td>
                   <td className="cell-links">
                     {links.map((l, j) => (
-                      <a key={j} href={l.href} target="_blank" rel="noreferrer" className="link-item">
-                        {l.text || l.href}
+                      <a key={j} href={l.href} target="_blank" rel="noreferrer" className="link-barogage">
+                        바로가기{links.length > 1 ? ` ${j + 1}` : ''}
                       </a>
                     ))}
                   </td>
@@ -145,12 +254,15 @@ export default function ResultTable({ newResults }: Props) {
                     </span>
                   </td>
                   <td className="cell-error">{r.error_message}</td>
-                  <td>{r.elapsed_seconds}</td>
+                  <td className="cell-elapsed">{r.elapsed_seconds}</td>
+                  <td>
+                    <button className="btn btn-sm btn-danger" onClick={() => handleDeleteOne(r)}>삭제</button>
+                  </td>
                 </tr>
               );
             })}
             {filtered.length === 0 && (
-              <tr><td colSpan={11} className="no-data">수집 결과가 없습니다.</td></tr>
+              <tr><td colSpan={12} className="no-data">수집 결과가 없습니다.</td></tr>
             )}
           </tbody>
         </table>

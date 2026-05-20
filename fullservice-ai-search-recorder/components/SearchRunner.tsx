@@ -10,6 +10,12 @@ interface Props {
   onComplete: (results: SearchResult[], logs: ExecutionLog[]) => void;
 }
 
+interface Progress {
+  current: number;
+  total: number;
+  queryText: string;
+}
+
 export default function SearchRunner({
   examId, examName, selectedStage, allQueries, selectedQueryIds, onComplete,
 }: Props) {
@@ -17,6 +23,7 @@ export default function SearchRunner({
   const [statusMsg, setStatusMsg] = useState('');
   const [error, setError] = useState('');
   const [mode, setMode] = useState<'selected' | 'all'>('selected');
+  const [progress, setProgress] = useState<Progress | null>(null);
 
   const selectedQueries = allQueries.filter((q) => q.exam_id === examId && selectedQueryIds.has(q.query_id));
   const allExamQueries = allQueries.filter((q) => q.exam_id === examId);
@@ -31,7 +38,8 @@ export default function SearchRunner({
 
     setRunning(true);
     setError('');
-    setStatusMsg(`실행 중... (${examName} / ${selectedStage})`);
+    setStatusMsg('');
+    setProgress({ current: 0, total: targetQueries.length, queryText: '' });
 
     try {
       const res = await fetch('/api/run-search', {
@@ -45,22 +53,54 @@ export default function SearchRunner({
         }),
       });
 
-      const data = await res.json();
-      if (!res.ok) {
+      if (!res.ok || !res.body) {
+        const data = await res.json().catch(() => ({ error: '서버 오류 발생' }));
         setError(data.error || '서버 오류 발생');
         return;
       }
 
-      const successCount = data.results.filter((r: SearchResult) => r.collection_status === '수집 성공').length;
-      const failCount = data.results.length - successCount;
-      setStatusMsg(`완료: 총 ${data.results.length}건 (성공 ${successCount} / 실패 ${failCount})`);
-      onComplete(data.results, data.logs);
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() ?? '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          try {
+            const event = JSON.parse(line.slice(6));
+            if (event.type === 'progress') {
+              setProgress({ current: event.current, total: event.total, queryText: event.query_text });
+            } else if (event.type === 'complete') {
+              const successCount = event.results.filter((r: SearchResult) => r.collection_status === '수집 성공').length;
+              const failCount = event.results.length - successCount;
+              setStatusMsg(`완료: 총 ${event.results.length}건 (성공 ${successCount} / 실패 ${failCount})`);
+              setProgress(null);
+              onComplete(event.results, event.logs);
+            } else if (event.type === 'error') {
+              setError(event.error || '서버 오류 발생');
+            }
+          } catch {
+            // 파싱 실패 라인 무시
+          }
+        }
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : '알 수 없는 오류');
     } finally {
       setRunning(false);
     }
   };
+
+  const pct = progress && progress.total > 0
+    ? Math.round((progress.current / progress.total) * 100)
+    : 0;
 
   return (
     <section className="section">
@@ -105,9 +145,25 @@ export default function SearchRunner({
         {running ? '실행 중...' : '검색 실행'}
       </button>
 
-      {running && (
-        <div className="progress-bar">
-          <div className="progress-fill animate" />
+      {running && progress && (
+        <div className="progress-wrapper">
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: progress.current === 0 ? '0%' : `${pct}%`, transition: 'width 0.4s ease' }}
+            />
+          </div>
+          <div className="progress-meta">
+            <span className="progress-count">
+              {progress.current === 0
+                ? `0 / ${progress.total}건 준비 중...`
+                : `${progress.current} / ${progress.total}번째 질의 처리 중`}
+            </span>
+            <span className="progress-pct">{pct}%</span>
+          </div>
+          {progress.queryText && (
+            <p className="progress-query-text">&ldquo;{progress.queryText}&rdquo;</p>
+          )}
         </div>
       )}
 
