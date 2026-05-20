@@ -1,0 +1,101 @@
+[
+  {
+    "run_id": "d7dc06a8-7e56-4daf-89ff-c528c78d5e3a",
+    "query_id": "f511be84-e70e-40f9-84f1-d6ef1ea2f418",
+    "query_text": "국어 5번 정답 뭐야?",
+    "execution_order": 1,
+    "started_at": "2026-05-13T06:52:49.484Z",
+    "ended_at": "2026-05-13T06:52:59.313Z",
+    "elapsed_seconds": 10,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "8e15660f-686f-43ce-ba7f-dc514c8b7acc",
+    "query_text": "고1 국어 정답 알려줘",
+    "execution_order": 1,
+    "started_at": "2026-05-13T07:31:13.352Z",
+    "ended_at": "2026-05-13T07:31:22.164Z",
+    "elapsed_seconds": 9,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "fdd9af66-1adf-4346-a98f-4106e12238a7",
+    "query_text": "6월 모의평가 고1 수학 정답 알려줘",
+    "execution_order": 2,
+    "started_at": "2026-05-13T07:31:31.360Z",
+    "ended_at": "2026-05-13T07:31:49.465Z",
+    "elapsed_seconds": 18,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "a13463ec-455f-4908-a5ba-1167bfe41b58",
+    "query_text": "국어 5번 정답 뭐야?",
+    "execution_order": 3,
+    "started_at": "2026-05-13T07:31:54.902Z",
+    "ended_at": "2026-05-13T07:32:11.835Z",
+    "elapsed_seconds": 17,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "587e0491-438b-4fa6-b950-e589f5bafb06",
+    "query_text": "수학 15번 정답 뭐야?",
+    "execution_order": 4,
+    "started_at": "2026-05-13T07:32:20.064Z",
+    "ended_at": "2026-05-13T07:32:36.962Z",
+    "elapsed_seconds": 17,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "8ebabac7-635a-4abe-884a-ee6c1c3fb85c",
+    "query_text": "영어 20번 정답 뭐야?",
+    "execution_order": 5,
+    "started_at": "2026-05-13T07:32:43.102Z",
+    "ended_at": "2026-05-13T07:32:54.686Z",
+    "elapsed_seconds": 12,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "0332cb22-c8eb-486c-a7ad-abb8cc6eb3a9",
+    "query_text": "한국사 1번 정답 뭐야?",
+    "execution_order": 6,
+    "started_at": "2026-05-13T07:33:00.176Z",
+    "ended_at": "2026-05-13T07:33:09.207Z",
+    "elapsed_seconds": 9,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "894d71d7-6f66-410f-9fd4-3bb487443fe0",
+    "query_id": "657bc380-0237-4338-9cf2-9a55d2f5ac64",
+    "query_text": "물리학Ⅰ 1번 정답 알려줘",
+    "execution_order": 7,
+    "started_at": "2026-05-13T07:33:14.867Z",
+    "ended_at": "2026-05-13T07:33:29.172Z",
+    "elapsed_seconds": 14,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  },
+  {
+    "run_id": "0854d789-327f-4cb6-a334-780e36cf4191",
+    "query_id": "57718be2-6937-4079-a275-db153e07e90f",
+    "query_text": "생명과학Ⅰ 10번 정답 알려줘",
+    "execution_order": 1,
+    "started_at": "2026-05-13T07:36:18.900Z",
+    "ended_at": "2026-05-13T07:36:29.758Z",
+    "elapsed_seconds": 11,
+    "collection_status": "수집 성공",
+    "error_message": ""
+  }
+]
