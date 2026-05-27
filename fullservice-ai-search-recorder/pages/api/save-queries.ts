@@ -97,8 +97,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           });
         }
         const csvText = await response.text();
-        const buffer = Buffer.from(csvText, 'utf-8');
-        const { queries: parsed, errors } = parseExcelBuffer(buffer, exam_id || '');
+        const { queries: parsed, errors } = parseExcelBuffer(csvText, exam_id || '');
         if (errors.length > 0 && parsed.length === 0) {
           return res.status(400).json({ errors });
         }

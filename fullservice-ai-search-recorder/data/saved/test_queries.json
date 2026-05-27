@@ -1,6 +1,6 @@
 [
   {
-    "query_id": "6f2bf272-ac4a-4d5b-b47a-a77f45e1f89b",
+    "query_id": "7fa2ad77-75a2-4396-bdb2-80d440c3045b",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "학년+과목 정답",
@@ -9,7 +9,7 @@
     "note": ""
   },
   {
-    "query_id": "ebb47704-3e71-49b7-a925-e105b648f1e8",
+    "query_id": "a665fdbf-5fa8-4076-9f2a-1e3d5adc1807",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "학년+과목 정답",
@@ -18,7 +18,7 @@
     "note": ""
   },
   {
-    "query_id": "c0a4c3b4-ddfc-4c8a-b351-1d447ddb9248",
+    "query_id": "a4ad8f43-1320-4fb3-9c6c-63a9426550f9",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "학년+과목 정답",
@@ -27,7 +27,7 @@
     "note": ""
   },
   {
-    "query_id": "21ca7d31-a7e7-4a48-9b6b-b0d1f742af30",
+    "query_id": "1cccc210-323d-4f04-97c7-49558ec1e684",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "과목+문항 정답",
@@ -36,7 +36,7 @@
     "note": ""
   },
   {
-    "query_id": "24b44055-a57d-4335-b333-594e28ac4521",
+    "query_id": "d144946f-8a1d-446a-aae2-f020a5b31df1",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "과목+문항 정답",
@@ -45,7 +45,7 @@
     "note": ""
   },
   {
-    "query_id": "b00d10b5-68a2-472b-8a9f-a207d3093e75",
+    "query_id": "c631a59c-97f4-48e8-b9f6-1da8b5839530",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "과목+문항 정답",
@@ -54,7 +54,7 @@
     "note": ""
   },
   {
-    "query_id": "ea972b2b-dffa-4416-98d1-b98e50711794",
+    "query_id": "58dead2e-f698-4534-bc10-acbdec35d519",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "선택과목 정답",
@@ -63,7 +63,7 @@
     "note": ""
   },
   {
-    "query_id": "1e154077-5f50-4951-9844-9a1d5cd98216",
+    "query_id": "9b40a91e-40d8-4587-a5ca-b91cd3da432b",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "선택과목 정답",
@@ -72,7 +72,7 @@
     "note": ""
   },
   {
-    "query_id": "26bed6cb-8254-4714-a09e-5f26704d933a",
+    "query_id": "afa985b7-0bec-400c-af78-5db88706d0a2",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "과목 정답",
@@ -81,7 +81,7 @@
     "note": ""
   },
   {
-    "query_id": "bab1fb83-f208-4ccb-8bb8-e0c9e7ac1dab",
+    "query_id": "cc866801-dab2-4bb1-9b96-3d655b7135da",
     "exam_id": "exam_2026_05",
     "category": "정답",
     "sub_category": "탐구 과목 정답",
@@ -90,7 +90,7 @@
     "note": ""
   },
   {
-    "query_id": "e4b5bb28-5d8e-4113-812e-244b1b47fc77",
+    "query_id": "34188d1a-abf7-4000-90da-8efd2dbaf1c5",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "학년+과목 배점",
@@ -99,7 +99,7 @@
     "note": ""
   },
   {
-    "query_id": "3f8233af-5ffa-48b1-ab6b-be4db9c91b52",
+    "query_id": "c8cb6199-89c3-4b3a-a73d-3b692ba08ad1",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "학년+과목 배점",
@@ -108,7 +108,7 @@
     "note": ""
   },
   {
-    "query_id": "71c69901-87b7-4699-b156-b28dc3e40bc2",
+    "query_id": "490234ae-228a-4e57-80f4-7f3e35d5d78f",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "문항별 배점",
@@ -117,7 +117,7 @@
     "note": ""
   },
   {
-    "query_id": "c603f8e6-f0f5-44a7-aadd-cdaac35421ae",
+    "query_id": "816a0db2-9afd-428c-8910-cc58fed22652",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "문항별 배점",
@@ -126,7 +126,7 @@
     "note": ""
   },
   {
-    "query_id": "2d53a175-61e0-4ebc-8390-eb0134f76274",
+    "query_id": "238da733-ed74-4446-85e0-d319ad0cd712",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "문항별 배점",
@@ -135,7 +135,7 @@
     "note": ""
   },
   {
-    "query_id": "18f3daa6-8d02-4c12-b2d2-c7de518bc0a5",
+    "query_id": "175ab9ce-7264-4a47-ab82-26c03d4af360",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "선택과목 배점",
@@ -144,7 +144,7 @@
     "note": ""
   },
   {
-    "query_id": "11d34eaa-425f-42bd-9b9a-5b77aea602cd",
+    "query_id": "805b1e55-3351-43b9-982a-8a277124d025",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "선택과목 배점",
@@ -153,7 +153,7 @@
     "note": ""
   },
   {
-    "query_id": "0e3b2e78-6fcf-4788-b5da-7e5e19149671",
+    "query_id": "93c3bd60-618d-4016-8ac1-d45d4c6785cd",
     "exam_id": "exam_2026_05",
     "category": "배점",
     "sub_category": "정답+배점 통합",
@@ -162,7 +162,7 @@
     "note": ""
   },
   {
-    "query_id": "b4d185af-ef0d-4565-88a6-b9c394fbae43",
+    "query_id": "50731f1b-24e8-429d-a92b-63d7858065f2",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "학년+과목 등급컷",
@@ -171,7 +171,7 @@
     "note": ""
   },
   {
-    "query_id": "f7d270b3-96f1-434a-a248-1cb63c66ccd3",
+    "query_id": "e9bc3a13-f7ef-417d-97f9-5fca9949fb8b",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "학년+과목 등급컷",
@@ -180,7 +180,7 @@
     "note": ""
   },
   {
-    "query_id": "3651e804-019c-40ae-81db-0e5e38d9542e",
+    "query_id": "0a035811-5c35-4648-92be-85303de016b9",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "학년+과목 등급컷",
@@ -189,7 +189,7 @@
     "note": ""
   },
   {
-    "query_id": "6e8fabf1-a6a1-4972-b680-bef9c45450d1",
+    "query_id": "8987139d-2e70-4848-a70e-bbdbfc021092",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "등급별 컷",
@@ -198,7 +198,7 @@
     "note": ""
   },
   {
-    "query_id": "fcbd845c-a02a-4583-a60b-ccea19677822",
+    "query_id": "d072f4a2-231f-4ce8-9127-46d9c9cb091d",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "등급별 컷",
@@ -207,7 +207,7 @@
     "note": ""
   },
   {
-    "query_id": "ae911e2d-dde4-4c95-8bbf-93307a8d1d5f",
+    "query_id": "296f7f0f-1304-40bd-b202-121d9fe1eb9f",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "선택과목 등급컷",
@@ -216,7 +216,7 @@
     "note": ""
   },
   {
-    "query_id": "60b565a4-ccde-43d9-a635-4a006e34df5c",
+    "query_id": "40825ecc-8f93-43d9-a6b5-678d8106c185",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "선택과목 등급컷",
@@ -225,7 +225,7 @@
     "note": ""
   },
   {
-    "query_id": "18e7657b-2b0d-4a0c-ac6d-a697bb3347d1",
+    "query_id": "fd4ebbb9-f408-4faa-aadb-b10324c6683f",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "탐구 등급컷",
@@ -234,7 +234,7 @@
     "note": ""
   },
   {
-    "query_id": "b3add76e-15c8-440e-ac5c-e63cbde27b40",
+    "query_id": "4163c4fa-12bb-476a-9e3b-36597c7ff329",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "탐구 등급컷",
@@ -243,7 +243,7 @@
     "note": ""
   },
   {
-    "query_id": "1b33edeb-5ac1-4e78-842b-80053fa37d10",
+    "query_id": "ba7aed70-7e99-4a27-801a-8889a1ec063f",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "점수 기반 등급",
@@ -252,7 +252,7 @@
     "note": ""
   },
   {
-    "query_id": "58528445-8940-4e57-8ad9-49fa04dcc549",
+    "query_id": "41fd663a-9a26-4750-979e-135f07c32851",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "점수 기반 등급",
@@ -261,7 +261,7 @@
     "note": ""
   },
   {
-    "query_id": "310877ce-a18f-4642-b60b-51476c644efd",
+    "query_id": "a6c9e877-f2db-4824-b526-8e14d6a0f926",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "전과목 등급컷",
@@ -270,7 +270,7 @@
     "note": ""
   },
   {
-    "query_id": "00217b78-fab5-4e57-a3e5-589a8a164fea",
+    "query_id": "a73618a5-8eb7-46a1-b1a4-723071c8435d",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "등급컷 공개 일정",
@@ -279,7 +279,7 @@
     "note": ""
   },
   {
-    "query_id": "2f70f30f-9fa4-4734-9cac-98b4b01faf08",
+    "query_id": "5069efa0-77af-42dc-befa-d523d226d4f2",
     "exam_id": "exam_2026_05",
     "category": "등급컷",
     "sub_category": "확정 여부",
@@ -288,7 +288,7 @@
     "note": ""
   },
   {
-    "query_id": "75b1a5f3-af25-47db-8ccd-2e1519ccd125",
+    "query_id": "62be671f-f82e-4ced-bb39-a50ff0853a18",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "과목 정답률",
@@ -297,7 +297,7 @@
     "note": ""
   },
   {
-    "query_id": "257bb3af-e8d3-466e-9bd2-c7c8c42b85db",
+    "query_id": "dfc92efe-62f7-4d27-a66c-f4b7cd725822",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "과목 정답률",
@@ -306,7 +306,7 @@
     "note": ""
   },
   {
-    "query_id": "71a26f48-f6fc-46b4-93e0-1c4cc7fa81d4",
+    "query_id": "4ac81cb9-5543-4e6e-95cf-ab1f892c1944",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "문항 정답률",
@@ -315,7 +315,7 @@
     "note": ""
   },
   {
-    "query_id": "245e5bfe-a39c-4ea0-86d4-6b8dafefc937",
+    "query_id": "06be1478-6f46-47e7-b073-b2ba92f6ca0e",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "문항 정답률",
@@ -324,7 +324,7 @@
     "note": ""
   },
   {
-    "query_id": "b1e58ebd-de64-46a4-86cc-fb37b8f2fab5",
+    "query_id": "1c4f1bac-ff2a-422f-966e-27bd112bfdd3",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "문항 정답률",
@@ -333,7 +333,7 @@
     "note": ""
   },
   {
-    "query_id": "c45013f7-649a-4631-bf1c-5e589e6b7c2e",
+    "query_id": "2c0b61a8-c03f-4822-8297-cdb3d6e54c97",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "오답률 TOP",
@@ -342,7 +342,7 @@
     "note": ""
   },
   {
-    "query_id": "dfdd854d-38c9-4494-a87f-b8cf36786a85",
+    "query_id": "47fe8421-3920-4a62-854b-6c2de5d96630",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "오답률 TOP",
@@ -351,7 +351,7 @@
     "note": ""
   },
   {
-    "query_id": "0990516b-49e0-4526-950a-aef1dc150fa9",
+    "query_id": "6845325a-dd53-417b-88cd-d9bf8cc24384",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "오답률 포괄 질의",
@@ -360,7 +360,7 @@
     "note": ""
   },
   {
-    "query_id": "eac98a03-a665-4209-a803-72850decab18",
+    "query_id": "905b610e-277a-4780-8d76-7f6e2fc80ece",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "탐구 오답률",
@@ -369,7 +369,7 @@
     "note": ""
   },
   {
-    "query_id": "5ac84427-da1d-48d7-b9d0-8f7bb22d750d",
+    "query_id": "88203a28-da58-404a-8c59-a5e7dc1af6b2",
     "exam_id": "exam_2026_05",
     "category": "정오답률",
     "sub_category": "저정답률 문항",
@@ -378,7 +378,7 @@
     "note": ""
   },
   {
-    "query_id": "41f4d45b-dfd2-49d0-89fe-3f862603d6ec",
+    "query_id": "6322d20f-fa3c-4a34-b0ce-cba3d9662f7c",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "과목 난이도",
@@ -387,7 +387,7 @@
     "note": ""
   },
   {
-    "query_id": "f2a8ef42-fffc-4217-b9ae-b89192c0dcc9",
+    "query_id": "ffc2ef08-ee10-4009-b5b8-82e7803337a1",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "과목 난이도",
@@ -396,7 +396,7 @@
     "note": ""
   },
   {
-    "query_id": "59108e4d-2569-4b35-8232-3d32cc0b9d51",
+    "query_id": "09e2c0f8-7dea-4dcf-a576-801f72f1a863",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "시험 난이도",
@@ -405,7 +405,7 @@
     "note": ""
   },
   {
-    "query_id": "8cf0650b-1af3-45c2-bc62-aace8fcfb7f3",
+    "query_id": "ab6dda69-a8ef-44bd-ab02-6570d90e6d45",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "고난도 문항",
@@ -414,7 +414,7 @@
     "note": ""
   },
   {
-    "query_id": "330289bb-c1ab-4425-9cbb-01b53af3b3fc",
+    "query_id": "9aa1d19a-9c98-41e2-9dd6-c0a699f7b7ee",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "쉬운 문항",
@@ -423,7 +423,7 @@
     "note": ""
   },
   {
-    "query_id": "ba4c46a1-3d44-4adc-b696-f40cda59b449",
+    "query_id": "c1462704-d22b-48e0-97a1-d461e263ded4",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "문항 난이도",
@@ -432,7 +432,7 @@
     "note": ""
   },
   {
-    "query_id": "e34b18cc-c8a5-4846-a031-02bc5ff605ce",
+    "query_id": "6dfe42b8-d7ee-4e0e-a3ef-b11505064e0b",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "문항 난이도",
@@ -441,7 +441,7 @@
     "note": ""
   },
   {
-    "query_id": "f4685f71-1cb9-4e76-b0c6-8a1f6546c3d0",
+    "query_id": "34f617f5-f7ca-4f28-83b9-dd658512d7eb",
     "exam_id": "exam_2026_05",
     "category": "난이도",
     "sub_category": "금지 표현 유도",
@@ -450,7 +450,7 @@
     "note": ""
   },
   {
-    "query_id": "ce0619ce-3854-4896-9a65-579aaeed7b18",
+    "query_id": "8dfaf8ea-0afb-4cdc-be8b-b6beb540824c",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "문항 선택비율",
@@ -459,7 +459,7 @@
     "note": ""
   },
   {
-    "query_id": "f8b83072-9764-44e6-b2d7-6db3c5a4a4e8",
+    "query_id": "674bf6c3-325f-4b02-9a30-e66f8b0cbe2d",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "문항 선택비율",
@@ -468,7 +468,7 @@
     "note": ""
   },
   {
-    "query_id": "d416b900-b020-44ec-8264-d113f619bacf",
+    "query_id": "16f61ebf-811e-46b5-8101-efe46a6d410a",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "문항 선택비율",
@@ -477,7 +477,7 @@
     "note": ""
   },
   {
-    "query_id": "0929e7a8-bffe-4b11-9033-349a28e402e7",
+    "query_id": "0978836c-66cf-4d5d-98c8-e570fcc3bfb8",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "최다 선택 선지",
@@ -486,7 +486,7 @@
     "note": ""
   },
   {
-    "query_id": "d562104f-46b4-4564-bafd-a5ab687d28a2",
+    "query_id": "7d522c6f-80f3-42cf-b5ea-31d4eb220398",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "오답 선택비율",
@@ -495,7 +495,7 @@
     "note": ""
   },
   {
-    "query_id": "810b8f6b-ee72-4f69-94b9-5f96113a22da",
+    "query_id": "b2b11b08-3886-4a00-8b1c-6f98cdd00f6c",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "선택과목 선택비율",
@@ -504,7 +504,7 @@
     "note": ""
   },
   {
-    "query_id": "350839d8-6b4e-4d2b-9434-352789ad8476",
+    "query_id": "aedea9a5-faa4-4ef4-a54f-fe3e6d0b3209",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "탐구 선택비율",
@@ -513,7 +513,7 @@
     "note": ""
   },
   {
-    "query_id": "d96aefe3-14cc-4590-b48b-e4b9022ff080",
+    "query_id": "80b7eb45-af24-48dc-85ce-8ee82abe1e6b",
     "exam_id": "exam_2026_05",
     "category": "선지별 선택비율",
     "sub_category": "포괄 선택비율",
@@ -522,7 +522,7 @@
     "note": ""
   },
   {
-    "query_id": "d4cf620c-13d8-4f6e-adba-a87849620405",
+    "query_id": "350ba041-c0e5-470a-ab9d-9dd93bee6217",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "업로드 일정",
@@ -531,7 +531,7 @@
     "note": ""
   },
   {
-    "query_id": "0ff74d9e-1039-4688-8c44-6dddf253a980",
+    "query_id": "133640cc-11f4-4f1d-bef6-119d9b195678",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "업로드 일정",
@@ -540,7 +540,7 @@
     "note": ""
   },
   {
-    "query_id": "867767ba-3288-4145-a849-4a6ef5bba23a",
+    "query_id": "797812d2-7617-410e-a121-f0806bc0f09d",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "제공 강사",
@@ -549,7 +549,7 @@
     "note": ""
   },
   {
-    "query_id": "910a706d-02c2-4e06-af97-f8f2f01b446b",
+    "query_id": "86f02f3e-5214-4cf5-a283-759fb331733a",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "제공 강사",
@@ -558,7 +558,7 @@
     "note": ""
   },
   {
-    "query_id": "d12bb4fd-5b18-4e68-ad41-3abd6ba87e1e",
+    "query_id": "a2100bb6-9feb-430f-853f-c1ae72dc42d9",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "과목 제공 여부",
@@ -567,7 +567,7 @@
     "note": ""
   },
   {
-    "query_id": "8b82656c-5a38-4033-a58c-3ea628b4a5e3",
+    "query_id": "a5317912-c017-47f8-884d-01533035a640",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "문항별 해설강의",
@@ -576,7 +576,7 @@
     "note": ""
   },
   {
-    "query_id": "093ae112-3b1c-4e41-8db4-40d51e1bd0c0",
+    "query_id": "39021a6d-eaf0-4c90-8f14-ab9022ac332e",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "문항별 해설강의",
@@ -585,7 +585,7 @@
     "note": ""
   },
   {
-    "query_id": "aa194ba0-218d-456c-9c8c-87c8b9d08a1f",
+    "query_id": "c5851315-4ce3-45ac-acf8-9c74f182e65a",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "강사별 해설강의",
@@ -594,7 +594,7 @@
     "note": ""
   },
   {
-    "query_id": "62b894bc-c222-4882-a34d-e62f1ec4a267",
+    "query_id": "5f104421-ebb2-4b00-be79-37ba4a5f4723",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "강사별 해설강의",
@@ -603,7 +603,7 @@
     "note": ""
   },
   {
-    "query_id": "da24026b-e0f5-48d0-814c-810b8ed41c89",
+    "query_id": "cbb82e02-1142-4d8c-a230-6a5e5b7b42ee",
     "exam_id": "exam_2026_05",
     "category": "해설강의",
     "sub_category": "해설강의 경로",
@@ -612,7 +612,7 @@
     "note": ""
   },
   {
-    "query_id": "30c66e38-cdd0-424f-bca1-3c899c3db973",
+    "query_id": "853867f2-05d4-490e-862a-f806bab62190",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "시험 총평",
@@ -621,7 +621,7 @@
     "note": ""
   },
   {
-    "query_id": "40e13c71-1fad-44e3-a8f5-d1a5dfb092d3",
+    "query_id": "3b8e2b80-9b53-4473-baa0-f2f2f7aa0961",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "과목 총평",
@@ -630,7 +630,7 @@
     "note": ""
   },
   {
-    "query_id": "0e1762bb-8a86-42e9-a7e1-4a160454cfa1",
+    "query_id": "d23fdf4b-01c5-4637-b974-8712b3b042c8",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "과목 총평",
@@ -639,7 +639,7 @@
     "note": ""
   },
   {
-    "query_id": "940b9243-db00-422e-89fa-dcd43cd1e4dc",
+    "query_id": "096ab70d-7b46-40d7-8697-8be7bf7af59c",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "총평 영상",
@@ -648,7 +648,7 @@
     "note": ""
   },
   {
-    "query_id": "c150e4c0-d167-4b08-b48e-76333c2b1ef5",
+    "query_id": "c2c43e74-148a-4add-a343-9625c99e0e6e",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "강사 총평",
@@ -657,7 +657,7 @@
     "note": ""
   },
   {
-    "query_id": "7489abb3-2c64-486a-a255-9826d59c0a6a",
+    "query_id": "e4fa3c0f-68c1-4d89-b6d4-ed87ad772b93",
     "exam_id": "exam_2026_05",
     "category": "총평",
     "sub_category": "총평 공개 일정",
@@ -666,7 +666,7 @@
     "note": ""
   },
   {
-    "query_id": "923ecd64-bacb-4722-8fdc-b200460558a5",
+    "query_id": "1d3af3ec-c833-4f4d-9deb-b305c2b59eb4",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "전체 일정",
@@ -675,7 +675,7 @@
     "note": ""
   },
   {
-    "query_id": "e85bfb47-d056-4be4-9410-c63c9a477280",
+    "query_id": "d3a3a903-2216-4998-801e-68351147f775",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "과목별 일정",
@@ -684,7 +684,7 @@
     "note": ""
   },
   {
-    "query_id": "45861518-4919-4330-b070-7c2903b1b303",
+    "query_id": "1f9b99e8-a162-4830-a874-157b79d872e9",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "과목별 일정",
@@ -693,7 +693,7 @@
     "note": ""
   },
   {
-    "query_id": "91d685dd-d1e8-4a71-a01f-a381d5963eb7",
+    "query_id": "d22af51f-5e53-46b7-a75e-710ef901392b",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "시청 경로",
@@ -702,7 +702,7 @@
     "note": ""
   },
   {
-    "query_id": "3c5af300-8307-441a-8d0d-97313d019bf7",
+    "query_id": "aaf4ff34-9577-4580-8e5f-33c5e8be24f7",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "강사 안내",
@@ -711,7 +711,7 @@
     "note": ""
   },
   {
-    "query_id": "04a023c2-33c3-497d-9b7d-692e6e0f61e3",
+    "query_id": "7fbc423a-9683-48a0-87c0-e7413c747d13",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "주제 안내",
@@ -720,7 +720,7 @@
     "note": ""
   },
   {
-    "query_id": "b6cc537f-e3ac-4e5d-97d8-3077522d85c8",
+    "query_id": "a54b0a2b-5a2d-420f-a5eb-6bbdb7cf7934",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "종료 상태",
@@ -729,7 +729,7 @@
     "note": ""
   },
   {
-    "query_id": "e622f869-d11d-44c7-872a-84a498393be1",
+    "query_id": "674db590-ce67-4d35-b1ba-424300832d73",
     "exam_id": "exam_2026_05",
     "category": "라이브 설명회",
     "sub_category": "다시보기 연결",
@@ -738,7 +738,7 @@
     "note": ""
   },
   {
-    "query_id": "043c3217-6f20-43ed-ac81-5c078645a3f2",
+    "query_id": "41e3a0ad-f334-486f-b2ac-8300df03df3f",
     "exam_id": "exam_2026_05",
     "category": "다시보기",
     "sub_category": "다시보기 공개 일정",
@@ -747,7 +747,7 @@
     "note": ""
   },
   {
-    "query_id": "e104a873-7521-42e2-b3be-497206d21d92",
+    "query_id": "a55f0bea-0de0-4db0-923e-714fed879bec",
     "exam_id": "exam_2026_05",
     "category": "다시보기",
     "sub_category": "과목별 다시보기",
@@ -756,7 +756,7 @@
     "note": ""
   },
   {
-    "query_id": "092f44e8-47e8-4e20-8b12-30b158c21eb2",
+    "query_id": "7ae4b576-da18-4eaf-ac5d-13b92801ce35",
     "exam_id": "exam_2026_05",
     "category": "다시보기",
     "sub_category": "과목별 다시보기",
@@ -765,7 +765,7 @@
     "note": ""
   },
   {
-    "query_id": "fb08357d-21d7-49a6-b530-ea1a37877a36",
+    "query_id": "0167f35f-2e1a-441a-8c1b-0d4b91dfdbfc",
     "exam_id": "exam_2026_05",
     "category": "다시보기",
     "sub_category": "종료 후 다시보기",
@@ -774,7 +774,7 @@
     "note": ""
   },
   {
-    "query_id": "fc668f84-d6dd-451d-861b-813c4c6aae50",
+    "query_id": "3e4cde84-1cd2-47e6-99d7-22d2768cc953",
     "exam_id": "exam_2026_05",
     "category": "다시보기",
     "sub_category": "다시보기 경로",
@@ -783,7 +783,7 @@
     "note": ""
   },
   {
-    "query_id": "ba5bddb8-dc72-4536-807f-a02dfe7fa456",
+    "query_id": "9c6c2569-cfb2-4200-a263-c51ebc63637f",
     "exam_id": "exam_2026_05",
     "category": "풀서비스 경로",
     "sub_category": "풀서비스 경로",
@@ -792,7 +792,7 @@
     "note": ""
   },
   {
-    "query_id": "353cf5f2-f925-447a-964d-3a289c989cd4",
+    "query_id": "145c0c44-a897-41e2-a1a7-328f35e1b2af",
     "exam_id": "exam_2026_05",
     "category": "풀서비스 경로",
     "sub_category": "채점 경로",
@@ -801,7 +801,7 @@
     "note": ""
   },
   {
-    "query_id": "92114a52-054f-468d-915c-74702bbad1f7",
+    "query_id": "287f5bc1-4ccb-4864-8416-8715f90e419c",
     "exam_id": "exam_2026_05",
     "category": "풀서비스 경로",
     "sub_category": "정답 경로",
@@ -810,7 +810,7 @@
     "note": ""
   },
   {
-    "query_id": "a370ae91-ebc7-4367-8c1e-030c22013e5a",
+    "query_id": "03296770-a089-42fc-946c-ca285ee3e6b0",
     "exam_id": "exam_2026_05",
     "category": "풀서비스 경로",
     "sub_category": "등급컷 경로",
@@ -819,7 +819,7 @@
     "note": ""
   },
   {
-    "query_id": "b01e10d0-33ed-4548-84fd-0494212bb181",
+    "query_id": "d370d670-261c-4240-ba6e-f45fc8e5898b",
     "exam_id": "exam_2026_05",
     "category": "풀서비스 경로",
     "sub_category": "해설강의 경로",
@@ -828,7 +828,7 @@
     "note": ""
   },
   {
-    "query_id": "5066fda8-e2de-4c7d-952c-1fe0bdfbf2f1",
+    "query_id": "7c7200aa-a195-4820-b9c8-89e89996d405",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "개인화 불가",
@@ -837,7 +837,7 @@
     "note": ""
   },
   {
-    "query_id": "5089bd33-11b5-4d85-aedb-896a9c7ef037",
+    "query_id": "198ed7fd-8cd0-48ec-a469-85e795a234c5",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "개인화 불가",
@@ -846,7 +846,7 @@
     "note": ""
   },
   {
-    "query_id": "89d4fb83-d2cd-4854-ac1a-ffd59fc82b11",
+    "query_id": "e47bb6a2-a0bc-4389-8f5f-f2c2c20c7a42",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "공개 전 정보 요구",
@@ -855,7 +855,7 @@
     "note": ""
   },
   {
-    "query_id": "07b9bb68-cd0d-40eb-9497-cde9981380d5",
+    "query_id": "3a8da4de-c9b4-46f0-a791-3caaedfbc543",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "공개 전 정보 요구",
@@ -864,7 +864,7 @@
     "note": ""
   },
   {
-    "query_id": "8e037386-7d2c-4af0-93e0-cc4f64246a64",
+    "query_id": "6102398c-27af-477c-9c28-58840b84a09c",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "성적 발표 확정 요구",
@@ -873,7 +873,7 @@
     "note": ""
   },
   {
-    "query_id": "9d1e5df2-a3d4-479b-a4f6-8dd8d61dd6e9",
+    "query_id": "6fb86e6c-fb24-434a-acf0-ee235d04cd5c",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "지원 범위 확인",
@@ -882,7 +882,7 @@
     "note": ""
   },
   {
-    "query_id": "28fbc249-5c1b-49e9-83d9-c2d482fb521e",
+    "query_id": "ce247694-28a0-4b79-bc55-a5695c9d3795",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "과거 회차",
@@ -891,7 +891,7 @@
     "note": ""
   },
   {
-    "query_id": "4e02d0a9-a0d3-473c-87f2-d0e1698d1e62",
+    "query_id": "23873e31-8db3-4aef-a870-905d935554dc",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "다른 시험 유형",
@@ -900,7 +900,7 @@
     "note": ""
   },
   {
-    "query_id": "3f3e3afe-cf9a-4c27-a6f1-76d8d51c16e8",
+    "query_id": "51fea862-059d-4523-8409-dbd466456a5c",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "입력 부족",
@@ -909,7 +909,7 @@
     "note": ""
   },
   {
-    "query_id": "5964995d-df79-4742-8687-54897bc95283",
+    "query_id": "bdd855d6-1ad3-4ed2-9485-07f545eba457",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "입력 부족",
@@ -918,7 +918,7 @@
     "note": ""
   },
   {
-    "query_id": "f8f65606-015b-4428-b2d4-73522cfcd41e",
+    "query_id": "30c3f629-bfb2-4781-b749-308e5f1c03e4",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "입력 부족",
@@ -927,7 +927,7 @@
     "note": ""
   },
   {
-    "query_id": "e70e9006-9463-49b8-be41-c3a5d8af63e1",
+    "query_id": "8e747acf-aacf-40ba-9545-3bacd4b4a07f",
     "exam_id": "exam_2026_05",
     "category": "예외/방어",
     "sub_category": "입력 부족",

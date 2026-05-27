@@ -12,22 +12,18 @@ export const DEFAULT_EXAMS: Exam[] = [
 ];
 
 export const DEFAULT_TIMELINE_STAGES = [
+  '시험 종료 전',
   '시험 종료',
   '사전 채점 오픈',
   '정답 공개',
-  'AI전략팀 데이터 확보',
-  '마이스 관리자 반영',
   '채점 서비스 오픈',
-  '국어/수학 1차 등급컷 오픈',
-  '사탐/과탐 1차 등급컷 오픈',
-  '2차 등급컷 오픈',
+  '국어, 수학 1차 등급컷 오픈',
+  '사탐, 과탐 1차 등급컷 오픈',
   '메가스터디 자체 등급컷 확정',
-  '성적 발표 확정',
-  '라이브 설명회 진행 전',
-  '라이브 설명회 종료 후',
-  '다시보기 공개 전',
-  '다시보기 공개 후',
 ];
+
+// 해설강의/라이브 설명회 섹션 (별도 영역으로 분리 예정)
+export const DEFAULT_TIMELINE_STAGES_LECTURE: string[] = [];
 
 export function createDefaultTimeline(exam_id: string): TimelineStage[] {
   return DEFAULT_TIMELINE_STAGES.map((stage_name, index) => ({

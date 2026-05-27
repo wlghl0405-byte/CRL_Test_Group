@@ -1,19 +1,29 @@
 {
   "exam_2026_06": [
     {
-      "timeline_id": "143695bf-318e-4e42-9cce-89dd38bb1f34",
+      "timeline_id": "bd3889a7-a4d8-4210-b7e6-d526c985dc99",
       "exam_id": "exam_2026_06",
       "stage_order": 1,
-      "stage_name": "시험 종료",
-      "expected_time": "2026-05-13T17:32",
+      "stage_name": "시험 종료 전",
+      "expected_time": "",
       "actual_time": "",
       "note": "",
       "active_yn": true
     },
     {
-      "timeline_id": "beae8cea-14d3-4831-aab8-83c3aa369981",
+      "timeline_id": "6a24a8a4-4a8e-4bbf-ad3c-a1b297909011",
       "exam_id": "exam_2026_06",
       "stage_order": 2,
+      "stage_name": "시험 종료",
+      "expected_time": "",
+      "actual_time": "",
+      "note": "",
+      "active_yn": true
+    },
+    {
+      "timeline_id": "96016d2a-834c-488d-96e0-718136351e2b",
+      "exam_id": "exam_2026_06",
+      "stage_order": 3,
       "stage_name": "사전 채점 오픈",
       "expected_time": "",
       "actual_time": "",
@@ -21,9 +31,9 @@
       "active_yn": true
     },
     {
-      "timeline_id": "dfb21f00-98e7-4079-8423-5d2b3b194e72",
+      "timeline_id": "e1c1ca9d-72cd-4a34-801c-23b6d97c37fc",
       "exam_id": "exam_2026_06",
-      "stage_order": 3,
+      "stage_order": 4,
       "stage_name": "정답 공개",
       "expected_time": "",
       "actual_time": "",
@@ -31,29 +41,9 @@
       "active_yn": true
     },
     {
-      "timeline_id": "c4e592fb-99b6-465c-9758-4a9ca59db876",
-      "exam_id": "exam_2026_06",
-      "stage_order": 4,
-      "stage_name": "AI전략팀 데이터 확보",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "308fd2be-5551-40bf-979d-8d0ee65fee5f",
+      "timeline_id": "24a069a7-3ff0-4499-87f9-e0698e55b44f",
       "exam_id": "exam_2026_06",
       "stage_order": 5,
-      "stage_name": "마이스 관리자 반영",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "b1d94b02-1d9b-466f-ade7-44d984a6053d",
-      "exam_id": "exam_2026_06",
-      "stage_order": 6,
       "stage_name": "채점 서비스 오픈",
       "expected_time": "",
       "actual_time": "",
@@ -61,90 +51,30 @@
       "active_yn": true
     },
     {
-      "timeline_id": "4acba8d7-5821-4fce-94a3-2849de8a24d8",
+      "timeline_id": "77798afe-e776-4757-8800-21869aaa6219",
+      "exam_id": "exam_2026_06",
+      "stage_order": 6,
+      "stage_name": "국어, 수학 1차 등급컷 오픈",
+      "expected_time": "",
+      "actual_time": "",
+      "note": "",
+      "active_yn": true
+    },
+    {
+      "timeline_id": "10d045cf-07c5-4777-bb82-859d6a7f70cd",
       "exam_id": "exam_2026_06",
       "stage_order": 7,
-      "stage_name": "국어/수학 1차 등급컷 오픈",
+      "stage_name": "사탐, 과탐 1차 등급컷 오픈",
       "expected_time": "",
       "actual_time": "",
       "note": "",
       "active_yn": true
     },
     {
-      "timeline_id": "92c23e6d-08f9-44bd-b971-7bf726d8e62a",
+      "timeline_id": "b656cbde-ed45-4886-a67f-5729ef4aa1ef",
       "exam_id": "exam_2026_06",
       "stage_order": 8,
-      "stage_name": "사탐/과탐 1차 등급컷 오픈",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "deb51745-ba20-4f38-8d18-33bb62f7afdb",
-      "exam_id": "exam_2026_06",
-      "stage_order": 9,
-      "stage_name": "2차 등급컷 오픈",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "47e08d54-09ce-4238-9d66-a9f609fcda5d",
-      "exam_id": "exam_2026_06",
-      "stage_order": 10,
       "stage_name": "메가스터디 자체 등급컷 확정",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "d49f2512-e729-4dd5-abfb-35eab58f4ac5",
-      "exam_id": "exam_2026_06",
-      "stage_order": 11,
-      "stage_name": "성적 발표 확정",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "d9a3d787-bb66-4af9-9017-6ed66a9fde60",
-      "exam_id": "exam_2026_06",
-      "stage_order": 12,
-      "stage_name": "라이브 설명회 진행 전",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "2809e620-bf02-43cd-b04e-4f1243bdbc69",
-      "exam_id": "exam_2026_06",
-      "stage_order": 13,
-      "stage_name": "라이브 설명회 종료 후",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "e67ae254-27f3-47e5-8f8d-79fb4c9404ed",
-      "exam_id": "exam_2026_06",
-      "stage_order": 14,
-      "stage_name": "다시보기 공개 전",
-      "expected_time": "",
-      "actual_time": "",
-      "note": "",
-      "active_yn": true
-    },
-    {
-      "timeline_id": "e8cb0974-040c-4bac-b461-fd9225a6049e",
-      "exam_id": "exam_2026_06",
-      "stage_order": 15,
-      "stage_name": "다시보기 공개 후",
       "expected_time": "",
       "actual_time": "",
       "note": "",

@@ -63,3 +63,22 @@ export function loadLogs(): ExecutionLog[] {
 export function saveLogs(data: ExecutionLog[]) {
   writeJSON('execution_logs.json', data);
 }
+
+// Verdict: run_id+query_id 기준으로 판정 결과를 업데이트
+export function saveVerdictForResult(
+  run_id: string,
+  query_id: string,
+  verdict: import('./types').VerdictResult,
+  collectionStatus?: '수집 성공' | '수집 실패',
+) {
+  const results = loadResults();
+  const idx = results.findIndex((r) => r.run_id === run_id && r.query_id === query_id);
+  if (idx >= 0) {
+    results[idx] = {
+      ...results[idx],
+      verdict,
+      ...(collectionStatus !== undefined ? { collection_status: collectionStatus } : {}),
+    };
+    saveResults(results);
+  }
+}

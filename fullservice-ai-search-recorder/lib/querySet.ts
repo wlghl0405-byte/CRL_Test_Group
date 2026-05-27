@@ -28,8 +28,9 @@ export interface ParseResult {
   errors: string[];
 }
 
-export function parseExcelBuffer(buffer: Buffer, fallbackExamId: string): ParseResult {
-  const workbook = XLSX.read(buffer, { type: 'buffer' });
+export function parseExcelBuffer(input: Buffer | string, fallbackExamId: string): ParseResult {
+  const type = typeof input === 'string' ? 'string' : 'buffer';
+  const workbook = XLSX.read(input, { type });
   const sheetName = workbook.SheetNames[0];
   const sheet = workbook.Sheets[sheetName];
   const rawRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: '' });

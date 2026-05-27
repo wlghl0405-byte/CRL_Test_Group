@@ -1,104 +1,402 @@
 [
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "6f2bf272-ac4a-4d5b-b47a-a77f45e1f89b",
+    "stage_name": "정답 공개",
+    "query_id": "7fa2ad77-75a2-4396-bdb2-80d440c3045b",
     "category": "정답",
     "query_text": "고3 국어 정답 알려줘",
-    "answer_title": "",
-    "answer_text": "번호\n정답\n배점\n유형\n정답률\n오답률\n난이도\n\n\n\n1\n1\n2점\n객관식\n96%\n4%\n하\n\n\n2\n3\n3점\n객관식\n66%\n34%\n중\n\n\n3\n2\n2점\n객관식\n94%\n6%\n하\n\n\n4\n4\n2점\n객관식\n92%\n8%\n하\n\n\n5\n5\n2점\n객관식\n87%\n13%\n중하\n\n\n6\n2\n2점\n객관식\n71%\n29%\n중\n\n\n7\n2\n2점\n객관식\n73%\n27%\n중\n\n\n8\n3\n3점\n객관식\n73%\n27%\n중\n\n\n9\n3\n2점\n객관식\n94%\n6%\n하\n\n\n10\n5\n2점\n객관식\n75%\n25%\n중\n\n\n11\n3\n3점\n객관식\n40%\n60%\n상\n\n\n12\n3\n2점\n객관식\n73%\n27%\n중\n\n\n13\n2\n2점\n객관식\n96%\n4%\n하\n\n\n14\n4\n2점\n객관식\n85%\n15%\n중하\n\n\n15\n3\n2점\n객관식\n68%\n32%\n중\n\n\n16\n4\n3점\n객관식\n71%\n29%\n중\n\n\n17\n1\n2점\n객관식\n81%\n19%\n중하\n\n\n18\n3\n2점\n객관식\n91%\n9%\n하\n\n\n19\n3\n2점\n객관식\n93%\n7%\n하\n\n\n20\n4\n2점\n객관식\n91%\n9%\n하\n\n\n21\n4\n3점\n객관식\n86%\n14%\n중하\n\n\n22\n1\n2점\n객관식\n87%\n13%\n중하\n\n\n23\n3\n2점\n객관식\n91%\n9%\n하\n\n\n24\n5\n3점\n객관식\n60%\n40%\n중\n\n\n25\n2\n2점\n객관식\n87%\n13%\n중하\n\n\n26\n1\n2점\n객관식\n67%\n33%\n중\n\n\n27\n5\n2점\n객관식\n76%\n24%\n중\n\n\n28\n2\n2점\n객관식\n81%\n19%\n중하\n\n\n29\n2\n2점\n객관식\n88%\n12%\n중하\n\n\n30\n5\n3점\n객관식\n86%\n14%\n중하\n\n\n31\n1\n2점\n객관식\n68%\n32%\n중\n\n\n32\n4\n2점\n객관식\n85%\n15%\n중하\n\n\n33\n5\n2점\n객관식\n83%\n17%\n중하\n\n\n34\n2\n3점\n객관식\n67%\n33%\n중\n\n\n35\n2\n2점\n객관식\n95%\n5%\n하\n\n\n36\n5\n2점\n객관식\n70%\n30%\n중\n\n\n37\n5\n2점\n객관식\n93%\n7%\n하\n\n\n38\n5\n2점\n객관식\n86%\n14%\n중하\n\n\n39\n4\n3점\n객관식\n80%\n20%\n중하\n\n\n40\n5\n2점\n객관식\n88%\n12%\n중하\n\n\n41\n1\n2점\n객관식\n79%\n21%\n중\n\n\n42\n4\n2점\n객관식\n94%\n6%\n하\n\n\n43\n2\n2점\n객관식\n89%\n11%\n중하\n\n\n44\n3\n2점\n객관식\n97%\n3%\n하\n\n\n45\n5\n3점\n객관식\n77%\n23%\n중",
-    "answer_html": "\n  <span class=\"megaml-citation\"><table class=\"unified-ai-talk__table\">\n<thead class=\"unified-ai-talk__table-head\">\n<tr class=\"unified-ai-talk__table-row\">\n<th>번호</th>\n<th>정답</th>\n<th>배점</th>\n<th>유형</th>\n<th>정답률</th>\n<th>오답률</th>\n<th>난이도</th>\n</tr>\n</thead>\n<tbody class=\"unified-ai-talk__table-body\"><tr class=\"unified-ai-talk__table-row\">\n<td>1</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>96%</td>\n<td>4%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>2</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n<td>66%</td>\n<td>34%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>3</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>4</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n<td>92%</td>\n<td>8%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>5</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>6</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>71%</td>\n<td>29%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>7</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>8</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>9</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>10</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>75%</td>\n<td>25%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>11</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n<td>40%</td>\n<td>60%</td>\n<td>상</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>12</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>13</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>96%</td>\n<td>4%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>14</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n<td>85%</td>\n<td>15%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>15</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>68%</td>\n<td>32%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>16</td>\n<td>4</td>\n<td>3점</td>\n<td>객관식</td>\n<td>71%</td>\n<td>29%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>17</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>81%</td>\n<td>19%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>18</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>19</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>93%</td>\n<td>7%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>20</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>21</td>\n<td>4</td>\n<td>3점</td>\n<td>객관식</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>22</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>23</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>24</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n<td>60%</td>\n<td>40%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>25</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>26</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>67%</td>\n<td>33%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>27</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>76%</td>\n<td>24%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>28</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>81%</td>\n<td>19%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>29</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>88%</td>\n<td>12%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>30</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>31</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>68%</td>\n<td>32%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>32</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n<td>85%</td>\n<td>15%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>33</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>83%</td>\n<td>17%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>34</td>\n<td>2</td>\n<td>3점</td>\n<td>객관식</td>\n<td>67%</td>\n<td>33%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>35</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>95%</td>\n<td>5%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>36</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>70%</td>\n<td>30%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>37</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>93%</td>\n<td>7%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>38</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>39</td>\n<td>4</td>\n<td>3점</td>\n<td>객관식</td>\n<td>80%</td>\n<td>20%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>40</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n<td>88%</td>\n<td>12%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>41</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n<td>79%</td>\n<td>21%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>42</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>43</td>\n<td>2</td>\n<td>2점</td>\n<td>객관식</td>\n<td>89%</td>\n<td>11%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>44</td>\n<td>3</td>\n<td>2점</td>\n<td>객관식</td>\n<td>97%</td>\n<td>3%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>45</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n<td>77%</td>\n<td>23%</td>\n<td>중</td>\n</tr>\n</tbody></table>\n</span>",
+    "answer_title": "2026년 5월 학력평가 고3 국어(화법과작문) 정답",
+    "answer_text": "| 번호",
+    "answer_html": "\n  | 번호<br>\n",
     "source_links": "[]",
-    "executed_at": "2026-05-20T15:12:55",
+    "executed_at": "2026-05-27T14:24:29",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 17
+    "elapsed_seconds": 10,
+    "verdict": {
+      "verdict_status": "재검수 필요",
+      "issues": [
+        {
+          "error_type": "기타",
+          "rubric_point": "전반적 답변 완성도",
+          "description": "제공된 답변이 '| 번호'로만 시작되어 실제 내용이 없거나 수집 실패 상태입니다. 답변 본체가 존재하지 않아 루브릭 기준 검수가 불가능합니다.",
+          "correction_request": "답변 재수집 및 재제출 필요"
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:31.804Z",
+      "verdict_note": "답변이 불완전하거나 수집 실패로 인해 실제 내용이 없어 평가 불가능합니다."
+    }
   },
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "310877ce-a18f-4642-b60b-51476c644efd",
+    "stage_name": "정답 공개",
+    "query_id": "a665fdbf-5fa8-4076-9f2a-1e3d5adc1807",
+    "category": "정답",
+    "query_text": "고3 수학 정답 알려줘",
+    "answer_title": "",
+    "answer_text": "번호\n정답\n배점\n유형\n\n\n\n1\n4\n2점\n객관식\n\n\n2\n5\n2점\n객관식\n\n\n3\n3\n3점\n객관식\n\n\n4\n5\n3점\n객관식\n\n\n5\n1\n3점\n객관식\n\n\n6\n1\n3점\n객관식\n\n\n7\n5\n3점\n객관식\n\n\n8\n3\n3점\n객관식\n\n\n9\n1\n4점\n객관식\n\n\n10\n2\n4점\n객관식\n\n\n11\n4\n4점\n객관식\n\n\n12\n2\n4점\n객관식\n\n\n13\n2\n4점\n객관식\n\n\n14\n3\n4점\n객관식\n\n\n15\n5\n4점\n객관식\n\n\n16\n24\n3점\n주관식\n\n\n17\n140\n3점\n주관식\n\n\n18\n8\n3점\n주관식\n\n\n19\n10\n3점\n주관식\n\n\n20\n155\n4점\n주관식\n\n\n21\n55\n4점\n주관식\n\n\n22\n9\n4점\n주관식\n\n\n23\n1\n2점\n객관식\n\n\n24\n5\n3점\n객관식\n\n\n25\n3\n3점\n객관식\n\n\n26\n4\n3점\n객관식\n\n\n27\n2\n3점\n객관식\n\n\n28\n5\n4점\n객관식\n\n\n29\n17\n4점\n주관식\n\n\n30\n31\n4점\n주관식",
+    "answer_html": "\n  <span class=\"megaml-citation\"><table class=\"unified-ai-talk__table\">\n<thead class=\"unified-ai-talk__table-head\">\n<tr class=\"unified-ai-talk__table-row\">\n<th>번호</th>\n<th>정답</th>\n<th>배점</th>\n<th>유형</th>\n</tr>\n</thead>\n<tbody class=\"unified-ai-talk__table-body\"><tr class=\"unified-ai-talk__table-row\">\n<td>1</td>\n<td>4</td>\n<td>2점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>2</td>\n<td>5</td>\n<td>2점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>3</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>4</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>5</td>\n<td>1</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>6</td>\n<td>1</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>7</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>8</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>9</td>\n<td>1</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>10</td>\n<td>2</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>11</td>\n<td>4</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>12</td>\n<td>2</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>13</td>\n<td>2</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>14</td>\n<td>3</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>15</td>\n<td>5</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>16</td>\n<td>24</td>\n<td>3점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>17</td>\n<td>140</td>\n<td>3점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>18</td>\n<td>8</td>\n<td>3점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>19</td>\n<td>10</td>\n<td>3점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>20</td>\n<td>155</td>\n<td>4점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>21</td>\n<td>55</td>\n<td>4점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>22</td>\n<td>9</td>\n<td>4점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>23</td>\n<td>1</td>\n<td>2점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>24</td>\n<td>5</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>25</td>\n<td>3</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>26</td>\n<td>4</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>27</td>\n<td>2</td>\n<td>3점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>28</td>\n<td>5</td>\n<td>4점</td>\n<td>객관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>29</td>\n<td>17</td>\n<td>4점</td>\n<td>주관식</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>30</td>\n<td>31</td>\n<td>4점</td>\n<td>주관식</td>\n</tr>\n</tbody></table>\n</span>",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:24:50",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 14,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "필수_문구_누락",
+          "rubric_point": "규칙 7",
+          "description": "사용자가 '고3 수학 정답'만 요청했을 때, 추가 정보 없이 전체 정답 테이블을 바로 제공하고 있습니다. 학년과 과목명은 명확하지만, 전체 30문항 정답을 일괄 제공하기 전에 사용자가 특정 문항을 원하는지 확인해야 합니다.",
+          "correction_request": "사용자 입력이 불충분할 경우 추가 정보 요청: '고3 수학의 전체 정답을 제공할까요? 또는 특정 문항의 정답을 알고 싶으신가요? 문항 번호를 입력해주세요.'"
+        },
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5",
+          "description": "정답 테이블 하단에 '고3 수학 풀서비스' 페이지로의 바로가기 링크가 없습니다.",
+          "correction_request": "답변 하단에 다음 문구 추가: '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [고3 수학 풀서비스 페이지 바로가기]({URL})'"
+        },
+        {
+          "error_type": "산출기준_불필요",
+          "rubric_point": "규칙 4",
+          "description": "정답과 배점은 고정 데이터인데, 테이블에 '산출 기준' 또는 '업데이트 기준' 시각이 불필요하게 포함되어 있거나 문맥상 해석이 필요합니다. 정답은 변경되지 않는 고정값이므로 시간 기준이 필요하지 않습니다.",
+          "correction_request": "정답/배점은 변동하지 않는 고정 데이터이므로 산출 기준 시각 제거"
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:34.684Z",
+      "verdict_note": "정답 공개 단계이나 필수 안내 문구와 풀서비스 링크가 누락되었으며, 사용자의 불충분한 입력(학년/과목/문항 미지정)에 대한 적절한 안내 없이 전체 정답이 제공되었습니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "93c3bd60-618d-4016-8ac1-d45d4c6785cd",
+    "category": "배점",
+    "query_text": "정답이랑 배점 같이 보여줘",
+    "answer_title": "",
+    "answer_text": "현재 2026년 5월 학력평가 정답 및 배점은 답변을 준비 중입니다. 5월 학력평가 채점 서비스 오픈 이후 확인하실 수 있습니다.",
+    "answer_html": "\n  현재 2026년 5월 학력평가 정답 및 배점은 답변을 준비 중입니다. 5월 학력평가 채점 서비스 오픈 이후 확인하실 수 있습니다.\n",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:25:20",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 22,
+    "verdict": {
+      "verdict_status": "통과",
+      "issues": [],
+      "verdict_at": "2026-05-27T05:32:41.479Z",
+      "verdict_note": "2026년 5월 학력평가는 아직 채점 서비스가 오픈되지 않은 상태로, 정답 및 배점 정보를 준비 중임을 적절히 안내하고 있습니다. 모든 루브릭 기준을 충족합니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "50731f1b-24e8-429d-a92b-63d7858065f2",
     "category": "등급컷",
-    "query_text": "전 과목 등급컷 한 번에 보여줘",
+    "query_text": "고3 국어 등급컷 알려줘",
     "answer_title": "",
-    "answer_text": "전 과목 등급컷을 확인하시려면 학년을 알려주셔야 합니다. 5월 학력평가는 고3 학생만 실시되었습니다.\n\n어떤 학년의 등급컷을 확인하고 싶으신가요?",
-    "answer_html": "\n  전 과목 등급컷을 확인하시려면 학년을 알려주셔야 합니다. 5월 학력평가는 고3 학생만 실시되었습니다.\n\n<p>어떤 학년의 등급컷을 확인하고 싶으신가요?</p>\n",
+    "answer_text": "국어(언어와매체)는 원점수가 '하한-상한' 범위로 제공됩니다.[4]\n\n\n\n등급\n원점수 범위\n표준점수\n백분위\n\n\n\n1등급\n0\n130\n96\n\n\n2등급\n0\n125\n90\n\n\n3등급\n0\n118\n78\n\n\n4등급\n0\n109\n61\n\n\n5등급\n0\n96\n40\n\n\n6등급\n0\n81\n23\n\n\n7등급\n0\n71\n11\n\n\n8등급\n0\n66\n4",
+    "answer_html": "\n  <span class=\"megaml-citation\">국어(언어와매체)는 원점수가 '하한-상한' 범위로 제공됩니다.<sup class=\"megaml-citation__refs\" data-indices=\"36-3\">[4]</sup></span>\n<table class=\"unified-ai-talk__table\">\n<thead class=\"unified-ai-talk__table-head\">\n<tr class=\"unified-ai-talk__table-row\">\n<th>등급</th>\n<th>원점수 범위</th>\n<th>표준점수</th>\n<th>백분위</th>\n</tr>\n</thead>\n<tbody class=\"unified-ai-talk__table-body\"><tr class=\"unified-ai-talk__table-row\">\n<td>1등급</td>\n<td>0</td>\n<td>130</td>\n<td>96</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>2등급</td>\n<td>0</td>\n<td>125</td>\n<td>90</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>3등급</td>\n<td>0</td>\n<td>118</td>\n<td>78</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>4등급</td>\n<td>0</td>\n<td>109</td>\n<td>61</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>5등급</td>\n<td>0</td>\n<td>96</td>\n<td>40</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>6등급</td>\n<td>0</td>\n<td>81</td>\n<td>23</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>7등급</td>\n<td>0</td>\n<td>71</td>\n<td>11</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>8등급</td>\n<td>0</td>\n<td>66</td>\n<td>4</td>\n</tr>\n</tbody></table>\n",
     "source_links": "[]",
-    "executed_at": "2026-05-20T15:13:27",
+    "executed_at": "2026-05-27T14:25:48",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 25
+    "elapsed_seconds": 23,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "필수_문구_누락",
+          "rubric_point": "규칙 8",
+          "description": "등급컷 공개 전 단계(정답 공개)에서 예상 등급컷 수치를 표로 제공하고 있으나, '표본 집계 중' 등의 단계별 필수 안내 문구가 없습니다.",
+          "correction_request": "등급컷 공개 전 단계임을 명확히 하기 위해 '예상 등급컷 산출을 위해 현재 표본 집계 중입니다'와 같은 필수 안내 문구를 추가하세요."
+        },
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5",
+          "description": "답변 하단에 풀서비스 바로가기 링크가 없습니다.",
+          "correction_request": "답변 하단에 '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [고3 수능 풀서비스 페이지 바로가기](URL)' 형식의 링크를 추가하세요."
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:42.954Z",
+      "verdict_note": "등급컷 공개 전 단계에서 수치를 제공하고 있으며, 필수 안내 문구와 풀서비스 링크가 누락되어 있습니다."
+    }
   },
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "eac98a03-a665-4209-a803-72850decab18",
+    "stage_name": "정답 공개",
+    "query_id": "5069efa0-77af-42dc-befa-d523d226d4f2",
+    "category": "등급컷",
+    "query_text": "메가스터디 확정 등급컷이야?",
+    "answer_title": "",
+    "answer_text": "네, 검색된 정보에 따르면 메가스터디에서 제공하는 2026년 3월 학력평가(고3 국어 화법과작문, 수학 확률과통계, 미적분, 기하)와 2026년 5월 학력평가(고3 국어 언어와매체)의 등급컷은 '확정' 단계입니다.[2,2,2,2,2]\n\n메가스터디는 시험 종료 후 자체 특허 통계 알고리즘을 활용하여 실시간 등급컷을 추정하며, 성적 발표 확정 상태가 되면 '확정 등급컷'으로 제공합니다.[3,3,3]",
+    "answer_html": "\n  네, 검색된 정보에 따르면 <span class=\"megaml-citation\">메가스터디에서 제공하는 2026년 3월 학력평가(고3 국어 화법과작문, 수학 확률과통계, 미적분, 기하)와 2026년 5월 학력평가(고3 국어 언어와매체)의 등급컷은 '확정' 단계입니다.<sup class=\"megaml-citation__refs\" data-indices=\"43-1,44-1,45-1,46-1,47-1\">[2,2,2,2,2]</sup></span>\n\n<p><span class=\"megaml-citation\">메가스터디는 시험 종료 후 자체 특허 통계 알고리즘을 활용하여 실시간 등급컷을 추정하며, 성적 발표 확정 상태가 되면 '확정 등급컷'으로 제공합니다.<sup class=\"megaml-citation__refs\" data-indices=\"23-2,24-2,25-2\">[3,3,3]</sup></span></p>\n",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:26:09",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 15,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "개인화_데이터_오류",
+          "rubric_point": "규칙 1",
+          "description": "사용자가 '메가스터디 확정 등급컷'을 물었지만 개인 성적 정보가 없는 상태에서, 특정 시험(2026년 3월, 5월 학력평가)의 등급컷을 확정값으로 제시하고 있습니다. 사용자 개인화 질의임을 명확히 하고 추가 정보 입력이 필요함을 안내해야 합니다.",
+          "correction_request": "세부적인 시험 정보(응시 시험, 과목 등)와 개인 성적 데이터 없이는 등급컷을 확정적으로 제공할 수 없다는 안내로 수정해야 합니다."
+        },
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5",
+          "description": "답변 하단에 메가스터디 풀서비스 바로가기 링크가 제공되지 않았습니다.",
+          "correction_request": "답변 마지막에 '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [메가스터디 풀서비스 페이지 바로가기](URL)' 형식으로 링크를 추가해야 합니다."
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:46.523Z",
+      "verdict_note": "개인화 데이터 오류와 풀서비스 링크 누락으로 수정이 필요합니다. 사용자가 개인 성적 데이터 없이 일반적인 등급컷 정보를 요청했으나, 답변에서 특정 시험의 등급컷을 확정값으로 제공하고 있으며 하단 안내 링크가 없습니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "62be671f-f82e-4ced-bb39-a50ff0853a18",
     "category": "정오답률",
-    "query_text": "생명과학I 오답률 높은 문제 알려줘",
+    "query_text": "고3 국어 정답률 알려줘",
     "answer_title": "",
-    "answer_text": "2026년 5월 학력평가 고3 생명과학 I에서 오답률이 높은 문항은 다음과 같습니다.\n\n\n\n\n번호\n오답률\n난이도\n\n\n\n19\n78%\n최상\n\n\n16\n57%\n상\n\n\n10\n51%\n상",
-    "answer_html": "\n  2026년 5월 학력평가 고3 생명과학 I에서 오답률이 높은 문항은 다음과 같습니다.\n\n<table class=\"unified-ai-talk__table\">\n<thead class=\"unified-ai-talk__table-head\">\n<tr class=\"unified-ai-talk__table-row\">\n<th align=\"center\">번호</th>\n<th align=\"center\">오답률</th>\n<th align=\"center\">난이도</th>\n</tr>\n</thead>\n<tbody class=\"unified-ai-talk__table-body\"><tr class=\"unified-ai-talk__table-row\">\n<td align=\"center\">19</td>\n<td align=\"center\">78%</td>\n<td align=\"center\">최상</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td align=\"center\">16</td>\n<td align=\"center\">57%</td>\n<td align=\"center\">상</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td align=\"center\">10</td>\n<td align=\"center\">51%</td>\n<td align=\"center\">상</td>\n</tr>\n</tbody></table>\n",
+    "answer_text": "번호\n정답률\n오답률\n난이도\n\n\n\n1\n96%\n4%\n하\n\n\n2\n66%\n34%\n중\n\n\n3\n94%\n6%\n하\n\n\n4\n92%\n8%\n하\n\n\n5\n87%\n13%\n중하\n\n\n6\n71%\n29%\n중\n\n\n7\n73%\n27%\n중\n\n\n8\n73%\n27%\n중\n\n\n9\n94%\n6%\n하\n\n\n10\n75%\n25%\n중\n\n\n11\n41%\n59%\n상\n\n\n12\n73%\n27%\n중\n\n\n13\n96%\n4%\n하\n\n\n14\n85%\n15%\n중하\n\n\n15\n68%\n32%\n중\n\n\n16\n71%\n29%\n중\n\n\n17\n81%\n19%\n중하\n\n\n18\n91%\n9%\n하\n\n\n19\n93%\n7%\n하\n\n\n20\n91%\n9%\n하\n\n\n21\n86%\n14%\n중하\n\n\n22\n87%\n13%\n중하\n\n\n23\n91%\n9%\n하\n\n\n24\n60%\n40%\n중\n\n\n25\n87%\n13%\n중하\n\n\n26\n67%\n33%\n중\n\n\n27\n76%\n24%\n중\n\n\n28\n81%\n19%\n중하\n\n\n29\n88%\n12%\n중하\n\n\n30\n86%\n14%\n중하\n\n\n31\n68%\n32%\n중\n\n\n32\n85%\n15%\n중하\n\n\n33\n83%\n17%\n중하\n\n\n34\n67%\n33%\n중\n\n\n35\n95%\n5%\n하\n\n\n36\n70%\n30%\n중\n\n\n37\n93%\n7%\n하\n\n\n38\n86%\n14%\n중하\n\n\n39\n80%\n20%\n중하\n\n\n40\n88%\n12%\n중하\n\n\n41\n79%\n21%\n중\n\n\n42\n94%\n6%\n하\n\n\n43\n89%\n11%\n중하\n\n\n44\n97%\n3%\n하\n\n\n45\n77%\n23%\n중\n\n\n[3]",
+    "answer_html": "\n  <span class=\"megaml-citation\"><table class=\"unified-ai-talk__table\">\n<thead class=\"unified-ai-talk__table-head\">\n<tr class=\"unified-ai-talk__table-row\">\n<th>번호</th>\n<th>정답률</th>\n<th>오답률</th>\n<th>난이도</th>\n</tr>\n</thead>\n<tbody class=\"unified-ai-talk__table-body\"><tr class=\"unified-ai-talk__table-row\">\n<td>1</td>\n<td>96%</td>\n<td>4%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>2</td>\n<td>66%</td>\n<td>34%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>3</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>4</td>\n<td>92%</td>\n<td>8%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>5</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>6</td>\n<td>71%</td>\n<td>29%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>7</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>8</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>9</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>10</td>\n<td>75%</td>\n<td>25%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>11</td>\n<td>41%</td>\n<td>59%</td>\n<td>상</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>12</td>\n<td>73%</td>\n<td>27%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>13</td>\n<td>96%</td>\n<td>4%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>14</td>\n<td>85%</td>\n<td>15%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>15</td>\n<td>68%</td>\n<td>32%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>16</td>\n<td>71%</td>\n<td>29%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>17</td>\n<td>81%</td>\n<td>19%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>18</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>19</td>\n<td>93%</td>\n<td>7%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>20</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>21</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>22</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>23</td>\n<td>91%</td>\n<td>9%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>24</td>\n<td>60%</td>\n<td>40%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>25</td>\n<td>87%</td>\n<td>13%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>26</td>\n<td>67%</td>\n<td>33%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>27</td>\n<td>76%</td>\n<td>24%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>28</td>\n<td>81%</td>\n<td>19%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>29</td>\n<td>88%</td>\n<td>12%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>30</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>31</td>\n<td>68%</td>\n<td>32%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>32</td>\n<td>85%</td>\n<td>15%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>33</td>\n<td>83%</td>\n<td>17%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>34</td>\n<td>67%</td>\n<td>33%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>35</td>\n<td>95%</td>\n<td>5%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>36</td>\n<td>70%</td>\n<td>30%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>37</td>\n<td>93%</td>\n<td>7%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>38</td>\n<td>86%</td>\n<td>14%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>39</td>\n<td>80%</td>\n<td>20%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>40</td>\n<td>88%</td>\n<td>12%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>41</td>\n<td>79%</td>\n<td>21%</td>\n<td>중</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>42</td>\n<td>94%</td>\n<td>6%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>43</td>\n<td>89%</td>\n<td>11%</td>\n<td>중하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>44</td>\n<td>97%</td>\n<td>3%</td>\n<td>하</td>\n</tr>\n<tr class=\"unified-ai-talk__table-row\">\n<td>45</td>\n<td>77%</td>\n<td>23%</td>\n<td>중</td>\n</tr>\n</tbody></table>\n<sup class=\"megaml-citation__refs\" data-indices=\"36-2\">[3]</sup></span><br>\n",
     "source_links": "[]",
-    "executed_at": "2026-05-20T15:13:56",
+    "executed_at": "2026-05-27T14:26:32",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 20
+    "elapsed_seconds": 15,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "산출기준_누락",
+          "rubric_point": "[규칙 3] 변동 데이터 답변에 산출 기준 시각 포함 여부",
+          "description": "정오답률은 변동 데이터이나 YYYY.MM.DD hh시 형식의 산출 기준 시각이 답변에 포함되지 않았습니다.",
+          "correction_request": "답변 상단이나 하단에 '2024.11.28 15시 산출 기준입니다' 등의 산출 기준 시각을 추가하세요."
+        },
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "[규칙 5] 답변 하단에 풀서비스 바로가기 링크 포함 여부",
+          "description": "답변 하단에 고3 국어 풀서비스 페이지로의 바로가기 링크가 없습니다.",
+          "correction_request": "답변 하단에 '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [고3 국어 풀서비스 페이지 바로가기]' 형식의 링크를 추가하세요."
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:51.471Z",
+      "verdict_note": "산출 기준 시각이 누락되었고, 풀서비스 바로가기 링크가 없습니다."
+    }
   },
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "e34b18cc-c8a5-4846-a031-02bc5ff605ce",
+    "stage_name": "정답 공개",
+    "query_id": "6dfe42b8-d7ee-4e0e-a3ef-b11505064e0b",
     "category": "난이도",
     "query_text": "수학 22번 난이도 알려줘",
-    "answer_title": "2026년 5월 학력평가 고3 수학 22번 난이도",
-    "answer_text": "2026년 5월 학력평가 고3 수학 22번 문항의 난이",
-    "answer_html": "\n  2026년 5월 학력평가 고3 수학 22번 문항의 난이<br>\n",
-    "source_links": "[]",
-    "executed_at": "2026-05-20T15:14:27",
+    "answer_title": "",
+    "answer_text": "2026년 5월 학력평가 고3 수학(미적분) 22번 문항의 난이도는 최상입니다. 해당 문항은 정답률 9%로 매우 낮았습니다.[3]\n\n수학 선택과목 중 확률과통계, 기하의 22번 문항 난이도 정보는 현재 확인할 수 없습니다.\n자세한 2026년 5월 학력평가 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다.▶ 2026년 5월 학력평가 풀서비스 페이지 바로가기",
+    "answer_html": "\n  2026년 5월 학력평가 고3 수학(미적분) 22번 문항의 난이도는 최상입니다. <span class=\"megaml-citation\">해당 문항은 정답률 9%로 매우 낮았습니다.<sup class=\"megaml-citation__refs\" data-indices=\"37-2\">[3]</sup></span>\n\n<p>수학 선택과목 중 확률과통계, 기하의 22번 문항 난이도 정보는 현재 확인할 수 없습니다.</p>\n<p>자세한 2026년 5월 학력평가 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다.<br>▶ <a target=\"_blank\" href=\"https://bit.ly/3P39q0j\">2026년 5월 학력평가 풀서비스 페이지 바로가기</a></p>\n",
+    "source_links": "[{\"text\":\"2026년 5월 학력평가 풀서비스 페이지 바로가기\",\"href\":\"https://bit.ly/3P39q0j\"}]",
+    "executed_at": "2026-05-27T14:27:00",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 22
+    "elapsed_seconds": 23,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "[규칙 5] 답변 하단에 풀서비스 바로가기 링크 포함 확인",
+          "description": "풀서비스 페이지 바로가기 텍스트는 있으나 실제 URL 링크가 형식화되지 않았습니다. '[{시험명} 풀서비스 페이지 바로가기]({URL})' 형식으로 제공되어야 합니다.",
+          "correction_request": "풀서비스 바로가기를 마크다운 링크 형식으로 수정: [2026년 5월 학력평가 풀서비스 페이지 바로가기](URL)"
+        },
+        {
+          "error_type": "산출기준_누락",
+          "rubric_point": "[규칙 3] 변동 데이터 답변에 산출 기준 시각 포함 확인",
+          "description": "정답률 9%는 변동 데이터이나 산출 기준 시각(YYYY.MM.DD hh시)이 표기되지 않았습니다.",
+          "correction_request": "정답률 정보 제공 시 '2026.05.DD hh시 산출 기준입니다' 형식의 산출 기준 시각 추가"
+        }
+      ],
+      "verdict_at": "2026-05-27T05:32:55.067Z",
+      "verdict_note": "풀서비스 바로가기 링크가 누락되었으며, 개인화 데이터(정답률)를 변동 데이터로 제시하면서 산출 기준 시각이 없습니다."
+    }
   },
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "940b9243-db00-422e-89fa-dcd43cd1e4dc",
-    "category": "총평",
-    "query_text": "영어 총평 영상 있어?",
+    "stage_name": "정답 공개",
+    "query_id": "34f617f5-f7ca-4f28-83b9-dd658512d7eb",
+    "category": "난이도",
+    "query_text": "킬러 문항 알려줘",
     "answer_title": "",
-    "answer_text": "2026년 5월 학력평가 고3 영어 총평 영상은 김지영 선생님이 제공하고 있습니다. 고정재, 킹콩 선생님은 총평 영상 제공 계획이 없습니다.[3]",
-    "answer_html": "\n  2026년 5월 학력평가 고3 영어 총평 영상은 김지영 선생님이 제공하고 있습니다. <span class=\"megaml-citation\">고정재, 킹콩 선생님은 총평 영상 제공 계획이 없습니다.<sup class=\"megaml-citation__refs\" data-indices=\"44-2\">[3]</sup></span>\n",
+    "answer_text": "킬러 문항은 일반적으로 정답률이 매우 낮고 난이도가 높은 문항을 의미합니다.\n\n2026년 5월 학력평가 고3 시험의 난이도 최상 문항에 대한 정보는 현재 답변을 준비 중입니다. 5월 학력평가 채점 서비스 오픈 이후 확인 가능합니다.\n어떤 학년의 어떤 과목에 대한 난이도 최상 문항을 찾고 계신가요? 학년과 과목명을 알려주시면 해당 정보를 확인해 드리겠습니다.",
+    "answer_html": "\n  킬러 문항은 일반적으로 정답률이 매우 낮고 난이도가 높은 문항을 의미합니다.\n\n<p>2026년 5월 학력평가 고3 시험의 난이도 최상 문항에 대한 정보는 현재 답변을 준비 중입니다. 5월 학력평가 채점 서비스 오픈 이후 확인 가능합니다.</p>\n<p>어떤 학년의 어떤 과목에 대한 난이도 최상 문항을 찾고 계신가요? 학년과 과목명을 알려주시면 해당 정보를 확인해 드리겠습니다.</p>\n",
     "source_links": "[]",
-    "executed_at": "2026-05-20T15:14:52",
+    "executed_at": "2026-05-27T14:27:25",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 18
+    "elapsed_seconds": 18,
+    "verdict": {
+      "verdict_status": "통과",
+      "issues": [],
+      "verdict_at": "2026-05-27T05:32:59.053Z",
+      "verdict_note": "답변이 모든 루브릭 기준을 충족합니다. 미공개 정보임을 명확히 안내하고, 추가 정보 요청으로 적절히 대응했습니다."
+    }
   },
   {
-    "run_id": "d62bf8c5-3643-4df2-9486-0d53a6768f26",
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
     "exam_id": "exam_2026_05",
     "exam_name": "2026년 5월 학력평가",
-    "stage_name": "다시보기 공개 후",
-    "query_id": "ba5bddb8-dc72-4536-807f-a02dfe7fa456",
-    "category": "풀서비스 경로",
-    "query_text": "6월 모의평가 풀서비스 어디서 봐?",
+    "stage_name": "정답 공개",
+    "query_id": "a5317912-c017-47f8-884d-01533035a640",
+    "category": "해설강의",
+    "query_text": "국어 5번 해설강의 있어?",
     "answer_title": "",
-    "answer_text": "메가스터디 6월 모의평가 풀서비스는 메가스터디 홈페이지의 [입시정보] 메뉴 안에 있는 [수능/모의고사 풀서비스]를 통해 이용하실 수 있습니다. 해당 서비스 페이지에 접속하신 후, 상단 메뉴에서 원하는 학력평가 시험 날짜를 클릭하시면 됩니다.[3,3,3,2]\n\n2027학년도 6월 모의평가 풀서비스는 6월 4일 모의평가 시행 후 제공될 예정입니다.[3]\n풀서비스에서는 다음과 같은 기능을 이용하실 수 있습니다.\n\n빠른 채점[4,4,4,3]\n실시간 등급컷 확인[4,4,4,3]\n경쟁자 분석[4,4,4]\n해설강의[4,4,4,3]\n나의 성적 위치 및 문항별 오답률 분석[3]\n주요 대학 미니배치표[3]",
-    "answer_html": "\n  메가스터디 6월 모의평가 풀서비스는 메가스터디 홈페이지의 [입시정보] 메뉴 안에 있는 [수능/모의고사 풀서비스]를 통해 이용하실 수 있습니다. <span class=\"megaml-citation\">해당 서비스 페이지에 접속하신 후, 상단 메뉴에서 원하는 학력평가 시험 날짜를 클릭하시면 됩니다.<sup class=\"megaml-citation__refs\" data-indices=\"29-2,30-2,31-2,47-1\">[3,3,3,2]</sup></span>\n\n<p><span class=\"megaml-citation\">2027학년도 6월 모의평가 풀서비스는 6월 4일 모의평가 시행 후 제공될 예정입니다.<sup class=\"megaml-citation__refs\" data-indices=\"47-2\">[3]</sup></span></p>\n<p>풀서비스에서는 다음과 같은 기능을 이용하실 수 있습니다.</p>\n<ul>\n<li><span class=\"megaml-citation\">빠른 채점<sup class=\"megaml-citation__refs\" data-indices=\"29-3,30-3,31-3,47-2\">[4,4,4,3]</sup></span></li>\n<li><span class=\"megaml-citation\">실시간 등급컷 확인<sup class=\"megaml-citation__refs\" data-indices=\"29-3,30-3,31-3,47-2\">[4,4,4,3]</sup></span></li>\n<li><span class=\"megaml-citation\">경쟁자 분석<sup class=\"megaml-citation__refs\" data-indices=\"29-3,30-3,31-3\">[4,4,4]</sup></span></li>\n<li><span class=\"megaml-citation\">해설강의<sup class=\"megaml-citation__refs\" data-indices=\"29-3,30-3,31-3,47-2\">[4,4,4,3]</sup></span></li>\n<li><span class=\"megaml-citation\">나의 성적 위치 및 문항별 오답률 분석<sup class=\"megaml-citation__refs\" data-indices=\"47-2\">[3]</sup></span></li>\n<li><span class=\"megaml-citation\">주요 대학 미니배치표<sup class=\"megaml-citation__refs\" data-indices=\"47-2\">[3]</sup></span></li>\n</ul>\n",
+    "answer_text": "2026년 5월 학력평가 고3 국어 5번 문항에 대한 개별 해설강의는 현재 확인할 수 없습니다.\n\n다만, 2026년 5월 학력평가 고3 국어 공통 과목 해설강의는 박석준 선생님과 정담온 선생님이 제공하고 있으며, 정담온 선생님은 언어와 매체 선택 과목 해설강의도 제공하고 있습니다.",
+    "answer_html": "\n  2026년 5월 학력평가 고3 국어 5번 문항에 대한 개별 해설강의는 현재 확인할 수 없습니다.\n\n<p>다만, 2026년 5월 학력평가 고3 국어 공통 과목 해설강의는 박석준 선생님과 정담온 선생님이 제공하고 있으며, 정담온 선생님은 언어와 매체 선택 과목 해설강의도 제공하고 있습니다.</p>\n",
     "source_links": "[]",
-    "executed_at": "2026-05-20T15:15:19",
+    "executed_at": "2026-05-27T14:27:55",
     "collection_status": "수집 성공",
     "error_message": "",
-    "elapsed_seconds": 20
+    "elapsed_seconds": 23,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5: 답변 하단에 풀서비스 바로가기 링크 포함",
+          "description": "답변 하단에 2026년 5월 학력평가 고3 국어 풀서비스 페이지 바로가기 링크가 제공되지 않음",
+          "correction_request": "답변 하단에 '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [2026년 5월 학력평가 풀서비스 페이지 바로가기]' 형식의 링크 추가"
+        },
+        {
+          "error_type": "용어_오류",
+          "rubric_point": "일관된 용어 사용",
+          "description": "사용자 질의에서 '해설강의'로 표현했으나 업계 표준은 '해설강좌'임. 답변에서도 '해설강의'로 일관되게 사용하여 혼동 우려",
+          "correction_request": "'해설강의'를 '해설강좌'로 통일하여 표현 (예: '개별 해설강좌는 현재 확인할 수 없습니다' / '공통 과목 해설강좌는 박석준 선생님과 정담온 선생님이 제공하고 있습니다')"
+        }
+      ],
+      "verdict_at": "2026-05-27T05:33:09.454Z",
+      "verdict_note": "풀서비스 바로가기 링크가 누락되었으며, 용어 오류('해설강의'를 '해설강좌'로 통일)와 함께 추가 정보 안내 구조가 불완전합니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "5f104421-ebb2-4b00-be79-37ba4a5f4723",
+    "category": "해설강의",
+    "query_text": "현우진 선생님 모의평가 해설강의 있어?",
+    "answer_title": "현우진 선생님 모의평가 해설강의 안내",
+    "answer_text": "현우진 선생님은 2026년 3월 학력평가 수학 해설강의를 제공하셨으나, 2026년 5월 학력평가 해설강의는 제공하지 않습니다.",
+    "answer_html": "\n  현우진 선생님은 2026년 3월 학력평가 수학 해설강의를 제공하셨으나, 2026년 5월 학력평가 해설강의는 제공하지 않습니다.<br>\n",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:28:42",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 38,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "용어_오류",
+          "rubric_point": "정확한 용어 사용",
+          "description": "답변에서 '해설강의'라는 용어를 사용했으나, 풀서비스에서 공식적으로 사용하는 용어는 '해설강좌'입니다.",
+          "correction_request": "'해설강의'를 '해설강좌'로 수정 필요"
+        },
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "[규칙 5] 답변 하단에 풀서비스 바로가기 링크 포함",
+          "description": "답변 하단에 해당 시험(학력평가)·학년 풀서비스 페이지 바로가기 링크가 제공되지 않았습니다.",
+          "correction_request": "답변 하단에 '학력평가 풀서비스 페이지 바로가기' 링크 추가 필요"
+        }
+      ],
+      "verdict_at": "2026-05-27T05:33:13.430Z",
+      "verdict_note": "용어 오류(해설강의→해설강좌)와 풀서비스 바로가기 링크가 누락되었습니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "1f9b99e8-a162-4830-a874-157b79d872e9",
+    "category": "라이브 설명회",
+    "query_text": "고3 수학 라이브 설명회 시간 알려줘",
+    "answer_title": "",
+    "answer_text": "현재 고3 수학 라이브 설명회 시간은 확인할 수 없습니다.\n\n메가스터디에서는 2028학년도 대입 개편 대비 ‘MEXX 썸머스쿨 전략 설명회’를 개최할 예정[1]입니다. 하지만 이 설명회는 중3, 고1, 고2 학부모를 대상으로 진행[5]됩니다.\n설명회 일정은 다음과 같습니다.[5]\n\n중3 설명회: 5월 27일(수) 오후 2시 30분[5]\n고1 설명회: 5월 27일(수) 오전 10시 30분[5]\n고2 설명회: 5월 29일(금) 오전 10시 30분[5]",
+    "answer_html": "\n  현재 고3 수학 라이브 설명회 시간은 확인할 수 없습니다.\n\n<p>메가스터디에서는 2028학년도 대입 개편 대비 <span class=\"megaml-citation\">‘MEXX 썸머스쿨 전략 설명회’를 개최할 예정<sup class=\"megaml-citation__refs\" data-indices=\"48-0\">[1]</sup></span>입니다. 하지만 <span class=\"megaml-citation\">이 설명회는 중3, 고1, 고2 학부모를 대상으로 진행<sup class=\"megaml-citation__refs\" data-indices=\"48-4\">[5]</sup></span>됩니다.</p>\n<p><span class=\"megaml-citation\">설명회 일정은 다음과 같습니다.<sup class=\"megaml-citation__refs\" data-indices=\"48-4\">[5]</sup></span></p>\n<ul>\n<li><span class=\"megaml-citation\"><strong>중3 설명회</strong>: 5월 27일(수) 오후 2시 30분<sup class=\"megaml-citation__refs\" data-indices=\"48-4\">[5]</sup></span></li>\n<li><span class=\"megaml-citation\"><strong>고1 설명회</strong>: 5월 27일(수) 오전 10시 30분<sup class=\"megaml-citation__refs\" data-indices=\"48-4\">[5]</sup></span></li>\n<li><span class=\"megaml-citation\"><strong>고2 설명회</strong>: 5월 29일(금) 오전 10시 30분<sup class=\"megaml-citation__refs\" data-indices=\"48-4\">[5]</sup></span></li>\n</ul>\n",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:29:06",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 19,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5: 답변 하단에 풀서비스 바로가기 링크가 포함되는지 확인",
+          "description": "라이브 설명회 정보 제공 후 풀서비스 페이지로의 바로가기 링크가 없습니다.",
+          "correction_request": "답변 하단에 '자세한 풀서비스 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [고3 수학 풀서비스 페이지 바로가기]' 형식의 링크를 추가하세요."
+        },
+        {
+          "error_type": "기타",
+          "rubric_point": "질의 충족도",
+          "description": "사용자가 '고3 수학 라이브 설명회 시간'을 질의했으나, 답변에서 제공하는 설명회는 중3, 고1, 고2 대상입니다. 고3 대상 라이브 설명회 정보가 확인되지 않는다는 점은 명시했지만, 이후 관련 없는 설명회 정보만 제공되고 있습니다.",
+          "correction_request": "고3 대상 라이브 설명회 정보 확인 경로를 안내하거나, 사용자가 직접 확인할 수 있는 서비스 페이지로의 안내를 강화하세요."
+        }
+      ],
+      "verdict_at": "2026-05-27T05:33:16.203Z",
+      "verdict_note": "고3 라이브 설명회에 대한 직접적인 답변이 없고, 풀서비스 바로가기 링크가 누락되었습니다."
+    }
+  },
+  {
+    "run_id": "c24ea056-5977-4170-b99f-b27f98f6510c",
+    "exam_id": "exam_2026_05",
+    "exam_name": "2026년 5월 학력평가",
+    "stage_name": "정답 공개",
+    "query_id": "d22af51f-5e53-46b7-a75e-710ef901392b",
+    "category": "라이브 설명회",
+    "query_text": "라이브 설명회 어디서 봐?",
+    "answer_title": "",
+    "answer_text": "현재 라이브로 진행되는 설명회에 대한 구체적인 정보는 확인하기 어렵습니다.\n\n메가스터디 입시설명회 강연 영상 다시보기와 자료집은 메가스터디 웹사이트를 통해 확인하실 수 있습니다. 메가스터디 입시설명회 강연 영상과 자료집은 다음 단계를 통해 확인할 수 있습니다.[3]\n확인 절차는 다음과 같습니다.\n\n메가스터디에서 '입시정보' 메뉴를 선택합니다.[3]\n'입시정보' 내에서 '입시전략 설명회'를 선택합니다.[3]\n'입시전략 설명회' 목록 중 시청하려는 설명회를 선택합니다.[3]\n강연 영상을 시청하려면 '강연보기'를 클릭하고, 자료집이 필요한 경우 '다운로드'를 선택하여 자료집을 내려받을 수 있습니다.[3]",
+    "answer_html": "\n  현재 라이브로 진행되는 설명회에 대한 구체적인 정보는 확인하기 어렵습니다.\n\n<p>메가스터디 입시설명회 강연 영상 다시보기와 자료집은 메가스터디 웹사이트를 통해 확인하실 수 있습니다. <span class=\"megaml-citation\">메가스터디 입시설명회 강연 영상과 자료집은 다음 단계를 통해 확인할 수 있습니다.<sup class=\"megaml-citation__refs\" data-indices=\"8-2\">[3]</sup></span></p>\n<p>확인 절차는 다음과 같습니다.</p>\n<ol>\n<li>메가스터디에서 <span class=\"megaml-citation\">'입시정보' 메뉴를 선택합니다.<sup class=\"megaml-citation__refs\" data-indices=\"8-2\">[3]</sup></span></li>\n<li><span class=\"megaml-citation\">'입시정보' 내에서 '입시전략 설명회'를 선택합니다.<sup class=\"megaml-citation__refs\" data-indices=\"8-2\">[3]</sup></span></li>\n<li><span class=\"megaml-citation\">'입시전략 설명회' 목록 중 시청하려는 설명회를 선택합니다.<sup class=\"megaml-citation__refs\" data-indices=\"8-2\">[3]</sup></span></li>\n<li><span class=\"megaml-citation\">강연 영상을 시청하려면 '강연보기'를 클릭하고, 자료집이 필요한 경우 '다운로드'를 선택하여 자료집을 내려받을 수 있습니다.<sup class=\"megaml-citation__refs\" data-indices=\"8-2\">[3]</sup></span></li>\n</ol>\n",
+    "source_links": "[]",
+    "executed_at": "2026-05-27T14:29:34",
+    "collection_status": "수집 성공",
+    "error_message": "",
+    "elapsed_seconds": 23,
+    "verdict": {
+      "verdict_status": "수정 필요",
+      "issues": [
+        {
+          "error_type": "풀서비스_링크_누락",
+          "rubric_point": "규칙 5: 답변 하단에 풀서비스 바로가기 링크 포함 여부",
+          "description": "라이브 설명회 관련 질의에 대한 답변 하단에 메가스터디 입시설명회 페이지로의 직접 링크가 없습니다.",
+          "correction_request": "답변 하단에 '자세한 정보는 아래 바로가기를 통해 확인하실 수 있습니다. ▶ [메가스터디 입시설명회 페이지 바로가기]' 형식의 링크를 추가하세요."
+        }
+      ],
+      "verdict_at": "2026-05-27T05:33:20.637Z",
+      "verdict_note": "라이브 설명회 관련 질의에 대해 서비스 이용 경로를 안내했으나, 풀서비스 바로가기 링크가 누락되었습니다."
+    }
   }
 ]

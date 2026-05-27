@@ -3,17 +3,28 @@ import { SearchResult } from '../lib/types';
 
 interface Props {
   newResults: SearchResult[];
+  verdictUpdates?: Array<{ run_id: string; query_id: string; verdict: SearchResult['verdict'] }>;
+  onSelectionChange?: (keys: Set<string>) => void;
+  onRunVerdict?: (keys: Set<string>) => void;
+  verdictRunning?: boolean;
 }
 
 const rowKey = (r: SearchResult) => `${r.run_id}|${r.query_id}`;
 
-export default function ResultTable({ newResults }: Props) {
+const VERDICT_BADGE: Record<string, string> = {
+  '통과': 'badge-verdict-pass',
+  '수정 필요': 'badge-verdict-correction',
+  '재검수 필요': 'badge-verdict-review',
+  '미판정': 'badge-verdict-none',
+};
+
+export default function ResultTable({ newResults, verdictUpdates, onSelectionChange, onRunVerdict, verdictRunning }: Props) {
   const [allResults, setAllResults] = useState<SearchResult[]>([]);
   const [filterExam, setFilterExam] = useState('');
   const [filterStage, setFilterStage] = useState('');
   const [filterCat, setFilterCat] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
-  const [failOnly, setFailOnly] = useState(false);
+  const [filterVerdict, setFilterVerdict] = useState('');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   const masterCheckRef = useRef<HTMLInputElement>(null);
@@ -34,20 +45,39 @@ export default function ResultTable({ newResults }: Props) {
     }
   }, [newResults]);
 
+  useEffect(() => {
+    if (verdictUpdates && verdictUpdates.length > 0) {
+      setAllResults((prev) =>
+        prev.map((r) => {
+          const update = verdictUpdates.find(
+            (u) => u.run_id === r.run_id && u.query_id === r.query_id,
+          );
+          return update ? { ...r, verdict: update.verdict } : r;
+        }),
+      );
+    }
+  }, [verdictUpdates]);
+
+  // 선택 변경 시 부모에게 전달
+  useEffect(() => {
+    onSelectionChange?.(selectedKeys);
+  }, [selectedKeys, onSelectionChange]);
+
   const exams = Array.from(new Set(allResults.map((r) => r.exam_name).filter(Boolean)));
   const stages = Array.from(new Set(allResults.map((r) => r.stage_name).filter(Boolean)));
   const categories = Array.from(new Set(allResults.map((r) => r.category).filter(Boolean)));
+
+  const verdictStatus = (r: SearchResult) => r.verdict?.verdict_status ?? '미판정';
 
   const filtered = allResults.filter((r) => {
     if (filterExam && r.exam_name !== filterExam) return false;
     if (filterStage && r.stage_name !== filterStage) return false;
     if (filterCat && r.category !== filterCat) return false;
     if (filterStatus && r.collection_status !== filterStatus) return false;
-    if (failOnly && r.collection_status !== '수집 실패') return false;
+    if (filterVerdict && verdictStatus(r) !== filterVerdict) return false;
     return true;
   });
 
-  // 마스터 체크박스 indeterminate 처리
   const allFilteredSelected = filtered.length > 0 && filtered.every((r) => selectedKeys.has(rowKey(r)));
   const someFilteredSelected = filtered.some((r) => selectedKeys.has(rowKey(r)));
   useEffect(() => {
@@ -56,8 +86,15 @@ export default function ResultTable({ newResults }: Props) {
     }
   }, [someFilteredSelected, allFilteredSelected]);
 
-  const toggleRow = (key: string) => {
+  const updateKeys = (fn: (prev: Set<string>) => Set<string>) => {
     setSelectedKeys((prev) => {
+      const next = fn(prev);
+      return next;
+    });
+  };
+
+  const toggleRow = (key: string) => {
+    updateKeys((prev) => {
       const next = new Set(prev);
       next.has(key) ? next.delete(key) : next.add(key);
       return next;
@@ -66,13 +103,13 @@ export default function ResultTable({ newResults }: Props) {
 
   const toggleAll = () => {
     if (allFilteredSelected) {
-      setSelectedKeys((prev) => {
+      updateKeys((prev) => {
         const next = new Set(prev);
         filtered.forEach((r) => next.delete(rowKey(r)));
         return next;
       });
     } else {
-      setSelectedKeys((prev) => {
+      updateKeys((prev) => {
         const next = new Set(prev);
         filtered.forEach((r) => next.add(rowKey(r)));
         return next;
@@ -157,15 +194,37 @@ export default function ResultTable({ newResults }: Props) {
           {categories.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
         <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
-          <option value="">전체 상태</option>
+          <option value="">전체 수집 상태</option>
           <option value="수집 성공">수집 성공</option>
           <option value="수집 실패">수집 실패</option>
         </select>
-        <label>
-          <input type="checkbox" checked={failOnly} onChange={(e) => setFailOnly(e.target.checked)} />
-          &nbsp;실패 건만 보기
-        </label>
+        <select value={filterVerdict} onChange={(e) => setFilterVerdict(e.target.value)}>
+          <option value="">전체 판정</option>
+          <option value="통과">통과</option>
+          <option value="수정 필요">수정 필요</option>
+          <option value="재검수 필요">재검수 필요</option>
+          <option value="미판정">미판정</option>
+        </select>
         <div className="filter-bar-actions">
+          {onRunVerdict && (
+            <button
+              className="btn btn-sm btn-verdict"
+              onClick={() => onRunVerdict(selectedKeys)}
+              disabled={verdictRunning || selectedCount === 0}
+              title={selectedCount === 0 ? '행을 선택한 후 판정을 실행하세요' : `선택한 ${selectedCount}건 판정`}
+            >
+              {verdictRunning ? '판정 중…' : `선택 판정 실행 ${selectedCount > 0 ? `(${selectedCount}건)` : ''}`}
+            </button>
+          )}
+          {onRunVerdict && (
+            <button
+              className="btn btn-sm btn-verdict-all"
+              onClick={() => onRunVerdict(new Set())}
+              disabled={verdictRunning || allResults.length === 0}
+            >
+              {verdictRunning ? '판정 중…' : '전체 판정 실행'}
+            </button>
+          )}
           <button
             className="btn btn-sm btn-danger"
             onClick={handleDeleteSelected}
@@ -204,6 +263,7 @@ export default function ResultTable({ newResults }: Props) {
               <th>답변 본문</th>
               <th>링크</th>
               <th>수집 상태</th>
+              <th>판정</th>
               <th>실패 사유</th>
               <th>소요(초)</th>
               <th>삭제</th>
@@ -253,6 +313,11 @@ export default function ResultTable({ newResults }: Props) {
                       {r.collection_status}
                     </span>
                   </td>
+                  <td>
+                    <span className={`badge ${VERDICT_BADGE[verdictStatus(r)] || 'badge-verdict-none'}`}>
+                      {verdictStatus(r)}
+                    </span>
+                  </td>
                   <td className="cell-error">{r.error_message}</td>
                   <td className="cell-elapsed">{r.elapsed_seconds}</td>
                   <td>
@@ -262,7 +327,7 @@ export default function ResultTable({ newResults }: Props) {
               );
             })}
             {filtered.length === 0 && (
-              <tr><td colSpan={12} className="no-data">수집 결과가 없습니다.</td></tr>
+              <tr><td colSpan={13} className="no-data">수집 결과가 없습니다.</td></tr>
             )}
           </tbody>
         </table>

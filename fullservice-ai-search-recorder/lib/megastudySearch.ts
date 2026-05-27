@@ -99,6 +99,7 @@ async function searchOneQuery(
     }
 
     // 컨테이너가 보인 후에도 텍스트는 스트리밍으로 채워지므로 실제 내용 대기
+    // 타임아웃 시 내용 미로딩으로 간주하여 즉시 수집 실패 처리
     await page.waitForFunction(
       () => {
         const el = document.querySelector(
@@ -108,7 +109,7 @@ async function searchOneQuery(
       },
       { timeout: AI_ANSWER_TIMEOUT_MS },
     ).catch(() => {
-      // 대기 실패 시 수집 시도는 계속하되 이후 빈 텍스트 체크에서 실패 처리됨
+      throw new Error('AI 답변 내용 미로딩: 충분한 텍스트가 수집되지 않음 (스트리밍 타임아웃)');
     });
 
     // 답변 수집
