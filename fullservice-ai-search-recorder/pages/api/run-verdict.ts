@@ -62,6 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         category: r.category,
         query_text: r.query_text,
         answer_text: r.answer_text,
+        source_links: r.source_links,
         collection_status: r.collection_status,
       });
 

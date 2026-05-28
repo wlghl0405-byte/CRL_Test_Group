@@ -24,25 +24,12 @@ export interface TestQuery {
   category: QueryCategory;
   sub_category: string;
   query_text: string;
-  priority: 'high' | 'medium' | 'low';
   note: string;
   target_stage?: string;
   poc_yn?: boolean;
 }
 
-export type QueryCategory =
-  | '정답'
-  | '배점'
-  | '등급컷'
-  | '정오답률'
-  | '난이도'
-  | '선지별 선택비율'
-  | '해설강의'
-  | '총평'
-  | '라이브 설명회'
-  | '다시보기'
-  | '풀서비스 경로'
-  | '예외/방어';
+export type QueryCategory = string;
 
 export interface SourceLink {
   text: string;

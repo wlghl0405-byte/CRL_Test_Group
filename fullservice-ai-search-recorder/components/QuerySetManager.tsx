@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { TestQuery, QueryCategory, Exam } from '../lib/types';
+import { TestQuery, Exam } from '../lib/types';
 import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   onSelectionChange: (ids: Set<string>) => void;
 }
 
-const CATEGORIES: QueryCategory[] = [
+const BASE_CATEGORIES = [
   '정답', '배점', '등급컷', '정오답률', '난이도',
   '선지별 선택비율', '해설강의', '총평', '라이브 설명회',
   '다시보기', '풀서비스 경로', '예외/방어',
@@ -24,15 +24,15 @@ const EMPTY_QUERY = (examId: string): TestQuery => ({
   category: '정답',
   sub_category: '',
   query_text: '',
-  priority: 'medium',
   note: '',
 });
 
 export default function QuerySetManager({
   queries, exams, examId, selectedStage, selectedQueryIds, onQueriesChange, onSelectionChange,
 }: Props) {
+  const PAGE_SIZE = 20;
+  const [currentPage, setCurrentPage] = useState(1);
   const [filterCat, setFilterCat] = useState('');
-  const [filterPriority, setFilterPriority] = useState('');
   const [filterExam, setFilterExam] = useState(true);
   const [filterExamId, setFilterExamId] = useState('');
   const [showForm, setShowForm] = useState(false);
@@ -45,6 +45,9 @@ export default function QuerySetManager({
   const [gsheetLoading, setGsheetLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const masterCheckRef = useRef<HTMLInputElement>(null);
+
+  const extraCategories = Array.from(new Set(queries.map((q) => q.category).filter((c) => c && !BASE_CATEGORIES.includes(c)))).sort();
+  const categoryOptions = [...BASE_CATEGORIES, ...extraCategories];
 
   const apiPost = async (body: Record<string, unknown>) => {
     const res = await fetch('/api/save-queries', {
@@ -62,12 +65,12 @@ export default function QuerySetManager({
       if (q.exam_id !== filterExamId) return false;
     }
     if (filterCat && q.category !== filterCat) return false;
-    if (filterPriority && q.priority !== filterPriority) return false;
     return true;
   });
 
   const handleFilterExamChange = (checked: boolean) => {
     setFilterExam(checked);
+    setCurrentPage(1);
     if (checked) {
       setFilterExamId(examId);
     }
@@ -76,6 +79,7 @@ export default function QuerySetManager({
   const handleFilterExamIdChange = (value: string) => {
     setFilterExamId(value);
     setFilterExam(value === examId);
+    setCurrentPage(1);
   };
 
   const openAdd = () => {
@@ -152,14 +156,17 @@ export default function QuerySetManager({
     setPreviewQueries(null);
   };
 
-  const allFilteredSelected = filtered.length > 0 && filtered.every((q) => selectedQueryIds.has(q.query_id));
-  const someFilteredSelected = filtered.some((q) => selectedQueryIds.has(q.query_id));
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  const allPageSelected = paginated.length > 0 && paginated.every((q) => selectedQueryIds.has(q.query_id));
+  const somePageSelected = paginated.some((q) => selectedQueryIds.has(q.query_id));
 
   useEffect(() => {
     if (masterCheckRef.current) {
-      masterCheckRef.current.indeterminate = someFilteredSelected && !allFilteredSelected;
+      masterCheckRef.current.indeterminate = somePageSelected && !allPageSelected;
     }
-  }, [someFilteredSelected, allFilteredSelected]);
+  }, [somePageSelected, allPageSelected]);
 
   const toggleSelect = (id: string) => {
     const next = new Set(selectedQueryIds);
@@ -242,7 +249,7 @@ export default function QuerySetManager({
             <table className="table">
               <thead>
                 <tr>
-                  <th>query_id</th><th>category</th><th>질의</th><th>priority</th>
+                  <th>query_id</th><th>category</th><th>질의</th>
                 </tr>
               </thead>
               <tbody>
@@ -251,7 +258,6 @@ export default function QuerySetManager({
                     <td>{q.query_id}</td>
                     <td>{q.category}</td>
                     <td>{q.query_text}</td>
-                    <td>{q.priority}</td>
                   </tr>
                 ))}
               </tbody>
@@ -282,15 +288,9 @@ export default function QuerySetManager({
             <option key={ex.exam_id} value={ex.exam_id}>{ex.exam_name}</option>
           ))}
         </select>
-        <select value={filterCat} onChange={(e) => setFilterCat(e.target.value)}>
+        <select value={filterCat} onChange={(e) => { setFilterCat(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 유형</option>
-          {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
-        </select>
-        <select value={filterPriority} onChange={(e) => setFilterPriority(e.target.value)}>
-          <option value="">전체 우선순위</option>
-          <option value="high">high</option>
-          <option value="medium">medium</option>
-          <option value="low">low</option>
+          {categoryOptions.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
         <button className="btn btn-sm" onClick={selectAll}>전체 선택</button>
         <button className="btn btn-sm" onClick={clearAll}>선택 해제</button>
@@ -321,23 +321,30 @@ export default function QuerySetManager({
                 <input
                   type="checkbox"
                   ref={masterCheckRef}
-                  checked={allFilteredSelected}
-                  onChange={() => allFilteredSelected ? clearAll() : selectAll()}
-                  title={allFilteredSelected ? '전체 해제' : '전체 선택'}
+                  checked={allPageSelected}
+                  onChange={() => {
+                    const next = new Set(selectedQueryIds);
+                    if (allPageSelected) {
+                      paginated.forEach((q) => next.delete(q.query_id));
+                    } else {
+                      paginated.forEach((q) => next.add(q.query_id));
+                    }
+                    onSelectionChange(next);
+                  }}
+                  title={allPageSelected ? '이 페이지 해제' : '이 페이지 선택'}
                 />
               </th>
               <th>시험 회차</th>
               <th>유형</th>
               <th>세부유형</th>
               <th>질의</th>
-              <th>우선순위</th>
               <th>비고</th>
               <th>수정</th>
               <th>삭제</th>
             </tr>
           </thead>
           <tbody>
-            {filtered.map((q) => (
+            {paginated.map((q) => (
               <tr key={q.query_id} className={selectedQueryIds.has(q.query_id) ? 'row-selected' : ''}>
                 <td>
                   <input
@@ -350,20 +357,24 @@ export default function QuerySetManager({
                 <td>{q.category}</td>
                 <td>{q.sub_category}</td>
                 <td className="cell-query">{q.query_text}</td>
-                <td>
-                  <span className={`badge badge-${q.priority}`}>{q.priority}</span>
-                </td>
                 <td>{q.note}</td>
                 <td><button className="btn btn-sm" onClick={() => openEdit(q)}>수정</button></td>
                 <td><button className="btn btn-sm btn-danger" onClick={() => handleDelete(q)}>삭제</button></td>
               </tr>
             ))}
             {filtered.length === 0 && (
-              <tr><td colSpan={9} className="no-data">질의가 없습니다.</td></tr>
+              <tr><td colSpan={8} className="no-data">질의가 없습니다.</td></tr>
             )}
           </tbody>
         </table>
       </div>
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>이전</button>
+          <span className="pagination-info">{currentPage} / {totalPages} 페이지 (총 {filtered.length}건)</span>
+          <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>다음</button>
+        </div>
+      )}
 
       {showForm && (
         <div className="modal-overlay">
@@ -371,8 +382,8 @@ export default function QuerySetManager({
             <h3>{editTarget ? '질의 수정' : '질의 추가'}</h3>
             <div className="form-row">
               <label>유형 *</label>
-              <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value as QueryCategory })}>
-                {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+              <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
+                {categoryOptions.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div className="form-row">
@@ -382,14 +393,6 @@ export default function QuerySetManager({
             <div className="form-row">
               <label>질의 내용 *</label>
               <textarea rows={3} value={form.query_text} onChange={(e) => setForm({ ...form, query_text: e.target.value })} />
-            </div>
-            <div className="form-row">
-              <label>우선순위</label>
-              <select value={form.priority} onChange={(e) => setForm({ ...form, priority: e.target.value as TestQuery['priority'] })}>
-                <option value="high">high</option>
-                <option value="medium">medium</option>
-                <option value="low">low</option>
-              </select>
             </div>
             <div className="form-row">
               <label>비고</label>

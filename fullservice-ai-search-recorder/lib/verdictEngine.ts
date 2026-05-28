@@ -38,6 +38,7 @@ interface VerdictInput {
   category: string;
   query_text: string;
   answer_text: string;
+  source_links: string;
   collection_status: '수집 성공' | '수집 실패';
 }
 
@@ -69,6 +70,12 @@ export async function runVerdict(input: VerdictInput): Promise<VerdictResult> {
     `[규칙 ${i + 1}] 검수 포인트: ${r.inspection_point}\n답변 기준: ${r.answer_standard}\n참조 예시 문구: ${r.reference_phrase}`
   ).join('\n\n');
 
+  let parsedLinks: { text: string; href: string }[] = [];
+  try { parsedLinks = JSON.parse(input.source_links || '[]'); } catch { /* ignore */ }
+  const linksSection = parsedLinks.length > 0
+    ? `\n## 답변에 포함된 링크 (source_links)\n${parsedLinks.map((l) => `- [${l.text}](${l.href})`).join('\n')}\n※ 위 링크가 답변 본문과 함께 제공됩니다. 풀서비스 링크 존재 여부 판정 시 source_links도 함께 참고하세요.`
+    : '';
+
   const userPrompt = `
 ## 검수 대상 정보
 - 공개 단계: ${input.stage_name}
@@ -79,7 +86,7 @@ export async function runVerdict(input: VerdictInput): Promise<VerdictResult> {
 ${rulesText}
 
 ## 실제 답변
-${input.answer_text}
+${input.answer_text}${linksSection}
 
 ## 판정 요청
 위 루브릭 규칙을 기반으로 답변을 평가하고, 아래 JSON 형식으로만 응답하세요. 다른 텍스트는 포함하지 마세요.

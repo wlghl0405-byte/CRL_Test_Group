@@ -53,7 +53,6 @@ export function buildExcelBuffer(
     category: q.category,
     sub_category: q.sub_category,
     query_text: q.query_text,
-    priority: q.priority,
     note: q.note,
   }));
   const ws3 = XLSX.utils.json_to_sheet(queryRows);

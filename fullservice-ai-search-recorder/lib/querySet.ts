@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import { TestQuery, QueryCategory } from './types';
+import { TestQuery } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 const REQUIRED_COLUMNS = ['category', 'query_text'];
@@ -12,16 +12,10 @@ const HEADER_MAP: Record<string, string> = {
   '질의 내용': 'query_text',
   '세부유형': 'sub_category',
   '세부 유형': 'sub_category',
-  '우선순위': 'priority',
   '비고': 'note',
   '시험회차': 'exam_id',
   '시험 회차': 'exam_id',
 };
-const VALID_CATEGORIES: QueryCategory[] = [
-  '정답', '배점', '등급컷', '정오답률', '난이도',
-  '선지별 선택비율', '해설강의', '총평', '라이브 설명회',
-  '다시보기', '풀서비스 경로', '예외/방어',
-];
 
 export interface ParseResult {
   queries: TestQuery[];
@@ -59,15 +53,10 @@ export function parseExcelBuffer(input: Buffer | string, fallbackExamId: string)
   const queries: TestQuery[] = [];
   rows.forEach((row, i) => {
     const rowNum = i + 2;
-    const category = String(row['category'] || '').trim() as QueryCategory;
-    if (!VALID_CATEGORIES.includes(category)) {
-      errors.push(`행 ${rowNum}: category 값 "${category}"이 유효하지 않습니다.`);
+    const category = String(row['category'] || '').trim();
+    if (!category) {
+      errors.push(`행 ${rowNum}: category 값이 비어 있습니다.`);
     }
-
-    const priorityRaw = String(row['priority'] || '').toLowerCase();
-    const validPriority = ['high', 'medium', 'low'].includes(priorityRaw)
-      ? (priorityRaw as 'high' | 'medium' | 'low')
-      : 'medium';
 
     queries.push({
       query_id: String(row['query_id'] || '').trim() || uuidv4(),
@@ -75,7 +64,6 @@ export function parseExcelBuffer(input: Buffer | string, fallbackExamId: string)
       category,
       sub_category: String(row['sub_category'] || '').trim(),
       query_text: String(row['query_text'] || '').trim(),
-      priority: validPriority,
       note: String(row['note'] || '').trim(),
     });
   });

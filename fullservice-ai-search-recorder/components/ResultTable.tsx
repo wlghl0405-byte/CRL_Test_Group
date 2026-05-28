@@ -1,8 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { SearchResult } from '../lib/types';
+
+function ExpandableText({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!expanded && ref.current) {
+      setOverflows(ref.current.scrollHeight > ref.current.clientHeight + 1);
+    }
+  }, [expanded, text]);
+
+  return (
+    <div className="expandable-cell">
+      <div ref={ref} className={expanded ? 'text-expanded' : 'text-collapsed'}>
+        {text}
+      </div>
+      {(overflows || expanded) && (
+        <button className="btn btn-xs expandable-btn" onClick={() => setExpanded((v) => !v)}>
+          {expanded ? '접기' : '펼치기'}
+        </button>
+      )}
+    </div>
+  );
+}
 
 interface Props {
   newResults: SearchResult[];
+  selectedExamName?: string;
   verdictUpdates?: Array<{ run_id: string; query_id: string; verdict: SearchResult['verdict'] }>;
   onSelectionChange?: (keys: Set<string>) => void;
   onRunVerdict?: (keys: Set<string>) => void;
@@ -18,14 +44,15 @@ const VERDICT_BADGE: Record<string, string> = {
   '미판정': 'badge-verdict-none',
 };
 
-export default function ResultTable({ newResults, verdictUpdates, onSelectionChange, onRunVerdict, verdictRunning }: Props) {
+export default function ResultTable({ newResults, selectedExamName, verdictUpdates, onSelectionChange, onRunVerdict, verdictRunning }: Props) {
   const [allResults, setAllResults] = useState<SearchResult[]>([]);
-  const [filterExam, setFilterExam] = useState('');
+  const PAGE_SIZE = 20;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filterExam, setFilterExam] = useState(selectedExamName ?? '');
   const [filterStage, setFilterStage] = useState('');
   const [filterCat, setFilterCat] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [filterVerdict, setFilterVerdict] = useState('');
-  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   const masterCheckRef = useRef<HTMLInputElement>(null);
 
@@ -34,6 +61,11 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
       .then((r) => r.json())
       .then((d) => setAllResults(d.results || []));
   }, []);
+
+  useEffect(() => {
+    setFilterExam(selectedExamName ?? '');
+    setCurrentPage(1);
+  }, [selectedExamName]);
 
   useEffect(() => {
     if (newResults.length > 0) {
@@ -78,13 +110,16 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
     return true;
   });
 
-  const allFilteredSelected = filtered.length > 0 && filtered.every((r) => selectedKeys.has(rowKey(r)));
-  const someFilteredSelected = filtered.some((r) => selectedKeys.has(rowKey(r)));
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  const allPageSelected = paginated.length > 0 && paginated.every((r) => selectedKeys.has(rowKey(r)));
+  const somePageSelected = paginated.some((r) => selectedKeys.has(rowKey(r)));
   useEffect(() => {
     if (masterCheckRef.current) {
-      masterCheckRef.current.indeterminate = someFilteredSelected && !allFilteredSelected;
+      masterCheckRef.current.indeterminate = somePageSelected && !allPageSelected;
     }
-  }, [someFilteredSelected, allFilteredSelected]);
+  }, [somePageSelected, allPageSelected]);
 
   const updateKeys = (fn: (prev: Set<string>) => Set<string>) => {
     setSelectedKeys((prev) => {
@@ -101,21 +136,6 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
     });
   };
 
-  const toggleAll = () => {
-    if (allFilteredSelected) {
-      updateKeys((prev) => {
-        const next = new Set(prev);
-        filtered.forEach((r) => next.delete(rowKey(r)));
-        return next;
-      });
-    } else {
-      updateKeys((prev) => {
-        const next = new Set(prev);
-        filtered.forEach((r) => next.add(rowKey(r)));
-        return next;
-      });
-    }
-  };
 
   const apiDelete = async (body: object) => {
     const res = await fetch('/api/results', {
@@ -181,24 +201,24 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
       </div>
 
       <div className="filter-bar">
-        <select value={filterExam} onChange={(e) => setFilterExam(e.target.value)}>
+        <select value={filterExam} onChange={(e) => { setFilterExam(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 시험</option>
           {exams.map((e) => <option key={e} value={e}>{e}</option>)}
         </select>
-        <select value={filterStage} onChange={(e) => setFilterStage(e.target.value)}>
+        <select value={filterStage} onChange={(e) => { setFilterStage(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 단계</option>
           {stages.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
-        <select value={filterCat} onChange={(e) => setFilterCat(e.target.value)}>
+        <select value={filterCat} onChange={(e) => { setFilterCat(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 유형</option>
           {categories.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
-        <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
+        <select value={filterStatus} onChange={(e) => { setFilterStatus(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 수집 상태</option>
           <option value="수집 성공">수집 성공</option>
           <option value="수집 실패">수집 실패</option>
         </select>
-        <select value={filterVerdict} onChange={(e) => setFilterVerdict(e.target.value)}>
+        <select value={filterVerdict} onChange={(e) => { setFilterVerdict(e.target.value); setCurrentPage(1); }}>
           <option value="">전체 판정</option>
           <option value="통과">통과</option>
           <option value="수정 필요">수정 필요</option>
@@ -250,9 +270,19 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
                 <input
                   type="checkbox"
                   ref={masterCheckRef}
-                  checked={allFilteredSelected}
-                  onChange={toggleAll}
-                  title={allFilteredSelected ? '전체 해제' : '전체 선택'}
+                  checked={allPageSelected}
+                  onChange={() => {
+                    updateKeys((prev) => {
+                      const next = new Set(prev);
+                      if (allPageSelected) {
+                        paginated.forEach((r) => next.delete(rowKey(r)));
+                      } else {
+                        paginated.forEach((r) => next.add(rowKey(r)));
+                      }
+                      return next;
+                    });
+                  }}
+                  title={allPageSelected ? '이 페이지 해제' : '이 페이지 선택'}
                 />
               </th>
               <th>실행 시각</th>
@@ -270,14 +300,12 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
             </tr>
           </thead>
           <tbody>
-            {filtered.map((r, i) => {
+            {paginated.map((r, i) => {
               const key = rowKey(r);
-              const expandKey = key + i;
               const links = parseLinks(r.source_links);
-              const isExpanded = expandedId === expandKey;
               const isSelected = selectedKeys.has(key);
               return (
-                <tr key={expandKey} className={`${r.collection_status === '수집 실패' ? 'row-fail' : ''} ${isSelected ? 'row-selected' : ''}`}>
+                <tr key={key + i} className={`${r.collection_status === '수집 실패' ? 'row-fail' : ''} ${isSelected ? 'row-selected' : ''}`}>
                   <td>
                     <input type="checkbox" checked={isSelected} onChange={() => toggleRow(key)} />
                   </td>
@@ -289,17 +317,7 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
                   <td className="cell-type">{r.category}</td>
                   <td className="cell-query">{r.query_text}</td>
                   <td className="cell-body-wide">
-                    <div
-                      className={isExpanded ? 'text-expanded' : 'text-collapsed'}
-                      onClick={() => setExpandedId(isExpanded ? null : expandKey)}
-                    >
-                      {r.answer_text || '—'}
-                    </div>
-                    {r.answer_text && (
-                      <button className="btn btn-xs" onClick={() => setExpandedId(isExpanded ? null : expandKey)}>
-                        {isExpanded ? '접기' : '펼치기'}
-                      </button>
-                    )}
+                    {r.answer_text ? <ExpandableText text={r.answer_text} /> : '—'}
                   </td>
                   <td className="cell-links">
                     {links.map((l, j) => (
@@ -332,6 +350,13 @@ export default function ResultTable({ newResults, verdictUpdates, onSelectionCha
           </tbody>
         </table>
       </div>
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>이전</button>
+          <span className="pagination-info">{currentPage} / {totalPages} 페이지 (총 {filtered.length}건)</span>
+          <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>다음</button>
+        </div>
+      )}
     </section>
   );
 }

@@ -91,7 +91,7 @@ body {
 .table .cell-body { min-width: 200px; max-width: 360px; white-space: normal; word-break: break-word; }
 
 .text-collapsed { max-height: 60px; overflow: hidden; cursor: pointer; white-space: pre-wrap; word-break: break-word; }
-.text-expanded { white-space: pre-wrap; word-break: break-word; }
+.text-expanded { max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
 .link-item { display: block; color: #1a3a6b; text-decoration: underline; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .link-barogage { display: block; color: #1a3a6b; text-decoration: underline; font-size: 11px; white-space: nowrap; margin-bottom: 2px; }
 
@@ -115,6 +115,8 @@ body {
 .btn-danger-outline:hover { background: #fff5f5; }
 .btn-sm { padding: 3px 8px; font-size: 11px; }
 .btn-xs { padding: 2px 6px; font-size: 11px; margin-top: 4px; }
+.expandable-cell { display: flex; flex-direction: column; }
+.expandable-btn { align-self: flex-end; margin-top: 6px; }
 .btn-large { padding: 10px 32px; font-size: 14px; font-weight: 700; }
 .btn-group { display: flex; gap: 8px; align-items: center; }
 
@@ -453,3 +455,6 @@ body {
 .rubric-table { font-size: 11px; }
 .rubric-table th { font-size: 11px; }
 .rubric-inspection { color: #555; font-style: italic; }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 0; }
+.pagination-info { font-size: 12px; color: #555; }

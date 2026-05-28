@@ -8,8 +8,10 @@ export interface VerdictPanelHandle {
 
 interface Props {
   allResults: SearchResult[];
+  selectedExamName?: string;
   selectedKeys: Set<string>;
   onVerdictComplete: (updated: Array<{ run_id: string; query_id: string; verdict: VerdictResult }>) => void;
+  onVerdictDelete: (updatedResults: SearchResult[]) => void;
   onRunningChange?: (running: boolean) => void;
 }
 
@@ -48,7 +50,7 @@ function rowKey(r: SearchResult) {
 }
 
 const VerdictPanel = forwardRef<VerdictPanelHandle, Props>(
-  ({ allResults, selectedKeys, onVerdictComplete, onRunningChange }, ref) => {
+  ({ allResults, selectedExamName, selectedKeys, onVerdictComplete, onVerdictDelete, onRunningChange }, ref) => {
     const [running, setRunning] = useState(false);
     const [progress, setProgress] = useState({ current: 0, total: 0, query_text: '' });
     const [tab, setTab] = useState<TabKey>('correction');
@@ -58,7 +60,10 @@ const VerdictPanel = forwardRef<VerdictPanelHandle, Props>(
     const [selectedCorrectionKeys, setSelectedCorrectionKeys] = useState<Set<string>>(new Set());
     const [selectedReviewKeys, setSelectedReviewKeys] = useState<Set<string>>(new Set());
 
-    const verdicted = allResults.filter((r) => r.verdict && r.verdict.verdict_status !== '미판정');
+    const examResults = selectedExamName
+      ? allResults.filter((r) => r.exam_name === selectedExamName)
+      : allResults;
+    const verdicted = examResults.filter((r) => r.verdict && r.verdict.verdict_status !== '미판정');
     const passCount = verdicted.filter((r) => r.verdict?.verdict_status === '통과').length;
     const correctionItems = verdicted.filter((r) => r.verdict?.verdict_status === '수정 필요');
     const reviewItems = verdicted.filter((r) => r.verdict?.verdict_status === '재검수 필요');
@@ -116,6 +121,41 @@ const VerdictPanel = forwardRef<VerdictPanelHandle, Props>(
     }, [onVerdictComplete, onRunningChange]);
 
     const handleRunAll = () => execVerdict('all');
+
+    const handleClearVerdictSelected = async () => {
+      const ids = [
+        ...Array.from(selectedCorrectionKeys),
+        ...Array.from(selectedReviewKeys),
+      ].map((k) => {
+        const [run_id, query_id] = k.split('|');
+        return { run_id, query_id };
+      });
+      if (ids.length === 0) return;
+      if (!confirm(`선택한 ${ids.length}건의 판정 결과를 삭제하시겠습니까?`)) return;
+      const res = await fetch('/api/results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'clear_verdict_selected', ids }),
+      });
+      const data = await res.json();
+      setSelectedCorrectionKeys(new Set());
+      setSelectedReviewKeys(new Set());
+      onVerdictDelete(data.results || []);
+    };
+
+    const handleClearVerdictAll = async () => {
+      const label = selectedExamName ? `"${selectedExamName}"` : '전체';
+      if (!confirm(`${label}의 판정 결과를 모두 삭제하시겠습니까?`)) return;
+      const res = await fetch('/api/results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'clear_verdict_all', exam_name: selectedExamName }),
+      });
+      const data = await res.json();
+      setSelectedCorrectionKeys(new Set());
+      setSelectedReviewKeys(new Set());
+      onVerdictDelete(data.results || []);
+    };
 
     const handleRunSelected = useCallback(() => {
       if (selectedKeys.size === 0) return;
@@ -188,6 +228,20 @@ const VerdictPanel = forwardRef<VerdictPanelHandle, Props>(
                 disabled={!hasVerdicted}
               >
                 전체 다운로드
+              </button>
+              <button
+                className="btn btn-sm btn-danger"
+                onClick={handleClearVerdictSelected}
+                disabled={selectedCount === 0}
+              >
+                선택 판정 삭제{selectedCount > 0 ? ` (${selectedCount}건)` : ''}
+              </button>
+              <button
+                className="btn btn-sm btn-danger-outline"
+                onClick={handleClearVerdictAll}
+                disabled={!hasVerdicted}
+              >
+                전체 판정 삭제
               </button>
             </div>
           </div>
@@ -360,13 +414,18 @@ function CorrectionTable({
   selectedKeys: Set<string>;
   onSelectionChange: (keys: Set<string>) => void;
 }) {
+  const PAGE_SIZE = 20;
+  const [currentPage, setCurrentPage] = useState(1);
   const [expandedKey, setExpandedKey] = useState<string | null>(null);
   const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
   const masterCheckRef = useRef<HTMLInputElement>(null);
 
-  const allKeys = items.map((r) => `${r.run_id}|${r.query_id}`);
-  const allSelected = allKeys.length > 0 && allKeys.every((k) => selectedKeys.has(k));
-  const someSelected = allKeys.some((k) => selectedKeys.has(k));
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const paginated = items.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  const pageKeys = paginated.map((r) => `${r.run_id}|${r.query_id}`);
+  const allSelected = pageKeys.length > 0 && pageKeys.every((k) => selectedKeys.has(k));
+  const someSelected = pageKeys.some((k) => selectedKeys.has(k));
 
   useEffect(() => {
     if (masterCheckRef.current) {
@@ -377,9 +436,9 @@ function CorrectionTable({
   const toggleAll = () => {
     const next = new Set(selectedKeys);
     if (allSelected) {
-      allKeys.forEach((k) => next.delete(k));
+      pageKeys.forEach((k) => next.delete(k));
     } else {
-      allKeys.forEach((k) => next.add(k));
+      pageKeys.forEach((k) => next.add(k));
     }
     onSelectionChange(next);
   };
@@ -395,6 +454,7 @@ function CorrectionTable({
   }
 
   return (
+    <>
     <div className="table-scroll">
       <table className="table">
         <thead>
@@ -411,7 +471,7 @@ function CorrectionTable({
           </tr>
         </thead>
         <tbody>
-          {items.flatMap((r) => {
+          {paginated.flatMap((r) => {
             const issues = r.verdict?.issues || [];
             if (issues.length === 0) return [];
             const gKey = `${r.run_id}|${r.query_id}`;
@@ -461,6 +521,14 @@ function CorrectionTable({
         </tbody>
       </table>
     </div>
+    {totalPages > 1 && (
+      <div className="pagination">
+        <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>이전</button>
+        <span className="pagination-info">{currentPage} / {totalPages} 페이지 (총 {items.length}건)</span>
+        <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>다음</button>
+      </div>
+    )}
+    </>
   );
 }
 
@@ -473,11 +541,16 @@ function ReviewTable({
   selectedKeys: Set<string>;
   onSelectionChange: (keys: Set<string>) => void;
 }) {
+  const PAGE_SIZE = 20;
+  const [currentPage, setCurrentPage] = useState(1);
   const masterCheckRef = useRef<HTMLInputElement>(null);
 
-  const allKeys = items.map((r) => rowKey(r));
-  const allSelected = allKeys.length > 0 && allKeys.every((k) => selectedKeys.has(k));
-  const someSelected = allKeys.some((k) => selectedKeys.has(k));
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  const paginated = items.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  const pageKeys = paginated.map((r) => rowKey(r));
+  const allSelected = pageKeys.length > 0 && pageKeys.every((k) => selectedKeys.has(k));
+  const someSelected = pageKeys.some((k) => selectedKeys.has(k));
 
   useEffect(() => {
     if (masterCheckRef.current) {
@@ -488,9 +561,9 @@ function ReviewTable({
   const toggleAll = () => {
     const next = new Set(selectedKeys);
     if (allSelected) {
-      allKeys.forEach((k) => next.delete(k));
+      pageKeys.forEach((k) => next.delete(k));
     } else {
-      allKeys.forEach((k) => next.add(k));
+      pageKeys.forEach((k) => next.add(k));
     }
     onSelectionChange(next);
   };
@@ -506,6 +579,7 @@ function ReviewTable({
   }
 
   return (
+    <>
     <div className="table-scroll">
       <table className="table">
         <thead>
@@ -520,7 +594,7 @@ function ReviewTable({
           </tr>
         </thead>
         <tbody>
-          {items.map((r) => {
+          {paginated.map((r) => {
             const key = rowKey(r);
             const isSelected = selectedKeys.has(key);
             return (
@@ -538,5 +612,13 @@ function ReviewTable({
         </tbody>
       </table>
     </div>
+    {totalPages > 1 && (
+      <div className="pagination">
+        <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>이전</button>
+        <span className="pagination-info">{currentPage} / {totalPages} 페이지 (총 {items.length}건)</span>
+        <button className="btn btn-sm" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>다음</button>
+      </div>
+    )}
+    </>
   );
 }

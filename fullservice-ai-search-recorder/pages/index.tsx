@@ -48,6 +48,11 @@ export default function Home() {
     });
   };
 
+  const handleVerdictDelete = (updatedResults: SearchResult[]) => {
+    setAllResults(updatedResults);
+    setNewResults([]);
+  };
+
   const handleVerdictComplete = (
     updates: Array<{ run_id: string; query_id: string; verdict: VerdictResult }>,
   ) => {
@@ -125,6 +130,7 @@ export default function Home() {
 
           <ResultTable
             newResults={newResults}
+            selectedExamName={selectedExam?.exam_name}
             verdictUpdates={verdictUpdates}
             onSelectionChange={setSelectedResultKeys}
             onRunVerdict={handleRunVerdict}
@@ -134,8 +140,10 @@ export default function Home() {
           <VerdictPanel
             ref={verdictPanelRef}
             allResults={allResults}
+            selectedExamName={selectedExam?.exam_name}
             selectedKeys={selectedResultKeys}
             onVerdictComplete={handleVerdictComplete}
+            onVerdictDelete={handleVerdictDelete}
             onRunningChange={setVerdictRunning}
           />
         </main>

@@ -12,7 +12,6 @@ interface Props {
 export default function TimelineEditor({ examId, examName, selectedStage, onStageSelect }: Props) {
   const [stages, setStages] = useState<TimelineStage[]>([]);
   const [loading, setLoading] = useState(false);
-  const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     if (!examId) return;
@@ -23,15 +22,27 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
       .finally(() => setLoading(false));
   }, [examId]);
 
+  const persist = async (nextStages: TimelineStage[]) => {
+    await fetch('/api/save-timeline', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ exam_id: examId, stages: nextStages }),
+    });
+  };
+
   const updateStage = (index: number, field: keyof TimelineStage, value: unknown) => {
     const next = [...stages];
     next[index] = { ...next[index], [field]: value };
     setStages(next);
   };
 
-  const addStage = () => {
+  const saveStageOnBlur = (nextStages: TimelineStage[]) => {
+    persist(nextStages);
+  };
+
+  const addStage = async () => {
     const maxOrder = stages.reduce((m, s) => Math.max(m, s.stage_order), 0);
-    setStages([
+    const next = [
       ...stages,
       {
         timeline_id: uuidv4(),
@@ -43,31 +54,26 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
         note: '',
         active_yn: true,
       },
-    ]);
+    ];
+    setStages(next);
+    await persist(next);
   };
 
-  const deleteStage = (index: number) => {
+  const deleteStage = async (index: number) => {
     if (!confirm('이 단계를 삭제하시겠습니까?')) return;
-    const next = stages.filter((_, i) => i !== index);
-    setStages(next.map((s, i) => ({ ...s, stage_order: i + 1 })));
+    const next = stages.filter((_, i) => i !== index).map((s, i) => ({ ...s, stage_order: i + 1 }));
+    setStages(next);
+    await persist(next);
   };
 
-  const moveStage = (index: number, dir: -1 | 1) => {
+  const moveStage = async (index: number, dir: -1 | 1) => {
     const next = [...stages];
     const target = index + dir;
     if (target < 0 || target >= next.length) return;
     [next[index], next[target]] = [next[target], next[index]];
-    setStages(next.map((s, i) => ({ ...s, stage_order: i + 1 })));
-  };
-
-  const handleSave = async () => {
-    await fetch('/api/save-timeline', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ exam_id: examId, stages }),
-    });
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+    const reordered = next.map((s, i) => ({ ...s, stage_order: i + 1 }));
+    setStages(reordered);
+    await persist(reordered);
   };
 
   const handleReset = async () => {
@@ -91,7 +97,6 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
         <div className="btn-group">
           <button className="btn btn-primary" onClick={addStage}>+ 단계 추가</button>
           <button className="btn" onClick={handleReset}>기본값 초기화</button>
-          <button className="btn btn-primary" onClick={handleSave}>{saved ? '저장 완료!' : '저장'}</button>
         </div>
       </div>
       <p className="hint">현재 실행 단계를 선택하면 이후 검색 실행 시 해당 단계로 기록됩니다.</p>
@@ -126,6 +131,7 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
                     className="input-inline"
                     value={stage.stage_name}
                     onChange={(e) => updateStage(i, 'stage_name', e.target.value)}
+                    onBlur={() => saveStageOnBlur(stages)}
                   />
                 </td>
                 <td>
@@ -134,6 +140,7 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
                     type="time"
                     value={stage.expected_time.includes('T') ? '' : stage.expected_time}
                     onChange={(e) => updateStage(i, 'expected_time', e.target.value)}
+                    onBlur={() => saveStageOnBlur(stages)}
                   />
                 </td>
                 <td>
@@ -142,6 +149,7 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
                     type="time"
                     value={stage.actual_time.includes('T') ? '' : stage.actual_time}
                     onChange={(e) => updateStage(i, 'actual_time', e.target.value)}
+                    onBlur={() => saveStageOnBlur(stages)}
                   />
                 </td>
                 <td>
@@ -149,6 +157,7 @@ export default function TimelineEditor({ examId, examName, selectedStage, onStag
                     className="input-inline"
                     value={stage.note}
                     onChange={(e) => updateStage(i, 'note', e.target.value)}
+                    onBlur={() => saveStageOnBlur(stages)}
                   />
                 </td>
                 <td>

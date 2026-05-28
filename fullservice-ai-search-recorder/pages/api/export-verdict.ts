@@ -96,22 +96,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   ];
   styleHeaderRow(ws1.getRow(1), 7);
 
-  const correctionRows = correctionItems.flatMap((r) => {
+  let ws1RowIdx = 2;
+  correctionItems.forEach((r, groupIdx) => {
     const issues = r.verdict?.issues || [];
-    return issues.map((issue) => ({
-      stage:       r.stage_name,
-      category:    r.category,
-      query:       r.query_text,
-      answer:      r.answer_text,
-      error_type:  ERROR_TYPE_LABEL[issue.error_type] || issue.error_type,
-      description: issue.description,
-      correction:  issue.correction_request,
-    }));
-  });
+    if (issues.length === 0) return;
+    const isEven = groupIdx % 2 === 1;
+    const startRow = ws1RowIdx;
 
-  correctionRows.forEach((rowData, i) => {
-    const row = ws1.addRow(rowData);
-    styleDataRow(row, 7, i % 2 === 1);
+    issues.forEach((issue, issueIdx) => {
+      const row = ws1.addRow({
+        stage:       issueIdx === 0 ? r.stage_name : '',
+        category:    issueIdx === 0 ? r.category : '',
+        query:       issueIdx === 0 ? r.query_text : '',
+        answer:      issueIdx === 0 ? r.answer_text : '',
+        error_type:  ERROR_TYPE_LABEL[issue.error_type] || issue.error_type,
+        description: issue.description,
+        correction:  issue.correction_request,
+      });
+      styleDataRow(row, 7, isEven);
+      ws1RowIdx++;
+    });
+
+    if (issues.length > 1) {
+      const endRow = ws1RowIdx - 1;
+      for (let col = 1; col <= 4; col++) {
+        ws1.mergeCells(startRow, col, endRow, col);
+        const cell = ws1.getCell(startRow, col);
+        cell.alignment = { vertical: 'middle', wrapText: true };
+        cell.border = CELL_BORDER;
+        if (isEven) cell.fill = EVEN_ROW_FILL;
+      }
+    }
   });
 
   // ── 재검수_대상 시트 ──────────────────────────────────────
