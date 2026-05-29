@@ -1,7 +1,7 @@
 {
   "exam_2026_06": [
     {
-      "timeline_id": "bd3889a7-a4d8-4210-b7e6-d526c985dc99",
+      "timeline_id": "f395a303-691b-4c98-be6c-6c5e9bb83ee7",
       "exam_id": "exam_2026_06",
       "stage_order": 1,
       "stage_name": "시험 종료 전",
@@ -11,7 +11,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "6a24a8a4-4a8e-4bbf-ad3c-a1b297909011",
+      "timeline_id": "b2295078-16de-412e-a921-f2f62590eb32",
       "exam_id": "exam_2026_06",
       "stage_order": 2,
       "stage_name": "시험 종료",
@@ -21,7 +21,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "96016d2a-834c-488d-96e0-718136351e2b",
+      "timeline_id": "13bbbe91-f4cf-4c2b-a427-f7e2070b7c33",
       "exam_id": "exam_2026_06",
       "stage_order": 3,
       "stage_name": "사전 채점 오픈",
@@ -31,7 +31,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "e1c1ca9d-72cd-4a34-801c-23b6d97c37fc",
+      "timeline_id": "7c2b1e23-f7e9-4533-8cd9-fa00e11d9245",
       "exam_id": "exam_2026_06",
       "stage_order": 4,
       "stage_name": "정답 공개",
@@ -41,7 +41,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "24a069a7-3ff0-4499-87f9-e0698e55b44f",
+      "timeline_id": "95bdf0a4-95d1-4eef-b06f-984eae841bd5",
       "exam_id": "exam_2026_06",
       "stage_order": 5,
       "stage_name": "채점 서비스 오픈",
@@ -51,7 +51,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "77798afe-e776-4757-8800-21869aaa6219",
+      "timeline_id": "dd9f9837-b24f-4415-a6bd-125c46ea2595",
       "exam_id": "exam_2026_06",
       "stage_order": 6,
       "stage_name": "국어, 수학 1차 등급컷 오픈",
@@ -61,7 +61,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "10d045cf-07c5-4777-bb82-859d6a7f70cd",
+      "timeline_id": "162354fc-6e4c-42bc-93c9-e9a61a9d89dc",
       "exam_id": "exam_2026_06",
       "stage_order": 7,
       "stage_name": "사탐, 과탐 1차 등급컷 오픈",
@@ -71,7 +71,7 @@
       "active_yn": true
     },
     {
-      "timeline_id": "b656cbde-ed45-4886-a67f-5729ef4aa1ef",
+      "timeline_id": "40b80a00-d536-45db-a7bc-e747d487d81f",
       "exam_id": "exam_2026_06",
       "stage_order": 8,
       "stage_name": "메가스터디 자체 등급컷 확정",

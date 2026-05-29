@@ -5,7 +5,7 @@
     "exam_type": "학력평가",
     "exam_month": 3,
     "year": 2026,
-    "active_yn": false
+    "active_yn": true
   },
   {
     "exam_id": "exam_2026_05",
