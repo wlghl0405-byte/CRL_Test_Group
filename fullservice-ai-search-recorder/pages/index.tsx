@@ -77,12 +77,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>풀서비스 출시 검수 자동화 도구</title>
+        <title>풀서비스 검수 자동화 도구</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="app">
         <header className="app-header">
-          <h1>풀서비스 출시 검수 자동화 도구</h1>
+          <h1>풀서비스 검수 자동화 도구</h1>
         </header>
 
         <main className="app-main">
@@ -130,6 +130,7 @@ export default function Home() {
 
           <ResultTable
             newResults={newResults}
+            parentResults={allResults}
             selectedExamName={selectedExam?.exam_name}
             verdictUpdates={verdictUpdates}
             onSelectionChange={setSelectedResultKeys}

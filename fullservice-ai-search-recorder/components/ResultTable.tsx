@@ -28,6 +28,7 @@ function ExpandableText({ text }: { text: string }) {
 
 interface Props {
   newResults: SearchResult[];
+  parentResults?: SearchResult[];
   selectedExamName?: string;
   verdictUpdates?: Array<{ run_id: string; query_id: string; verdict: SearchResult['verdict'] }>;
   onSelectionChange?: (keys: Set<string>) => void;
@@ -44,7 +45,7 @@ const VERDICT_BADGE: Record<string, string> = {
   '미판정': 'badge-verdict-none',
 };
 
-export default function ResultTable({ newResults, selectedExamName, verdictUpdates, onSelectionChange, onRunVerdict, verdictRunning }: Props) {
+export default function ResultTable({ newResults, parentResults, selectedExamName, verdictUpdates, onSelectionChange, onRunVerdict, verdictRunning }: Props) {
   const [allResults, setAllResults] = useState<SearchResult[]>([]);
   const PAGE_SIZE = 20;
   const [currentPage, setCurrentPage] = useState(1);
@@ -66,6 +67,10 @@ export default function ResultTable({ newResults, selectedExamName, verdictUpdat
     setFilterExam(selectedExamName ?? '');
     setCurrentPage(1);
   }, [selectedExamName]);
+
+  useEffect(() => {
+    if (parentResults !== undefined) setAllResults(parentResults);
+  }, [parentResults]);
 
   useEffect(() => {
     if (newResults.length > 0) {
